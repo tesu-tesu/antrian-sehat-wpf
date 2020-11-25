@@ -1,0 +1,24 @@
+﻿<basic:MyPage x:Class="TestWPPL.Register.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestWPPL"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="RegisterPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="name_txt" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Name" Width="176" Margin="212,96,212,-95"/>
+        <TextBox Name="email_txt" Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Email" Width="176" Margin="212,124,212,-123"/>
+        <TextBox Name="password_txt"  Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Password" Width="176" Margin="212,152,212,-151"/>
+        <TextBox Name="passwordc_txt" Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Password Confirmation" Width="176" Margin="212,180,212,-179"/>
+        <Button Name="register_btn"  Grid.Row="0" Grid.Column="0" Content="Register" Width="176" Margin="212,217,212,-217"/>
+    </Grid>
+</basic:MyPage>
