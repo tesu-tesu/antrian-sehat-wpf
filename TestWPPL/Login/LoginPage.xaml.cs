@@ -44,8 +44,8 @@ namespace TestWPPL.Login {
             emailTxtBox = txtBoxBuilder.activate(this, "email_txt");
             passwordTxtBox = passBoxBuilder.activate(this, "password_box");
             //loginStatusTxtBlock = txtBlockBuilder.activate(this, "loginStatus");
-            //emailTxtBlock = txtBlockBuilder.activate(this, "email_error_txt");
-            //passTxtBlock = txtBlockBuilder.activate(this, "password_error_txt");
+            emailTxtBlock = txtBlockBuilder.activate(this, "email_error_txt");
+            passTxtBlock = txtBlockBuilder.activate(this, "password_error_txt");
         }
 
         public void onLoginButtonClick() {
@@ -57,8 +57,10 @@ namespace TestWPPL.Login {
             this.Dispatcher.Invoke(() =>    //jika method ini dipanggil scr async maka pakai dispatcher
             {
                 loginButton.setText(_status);
-                email_error_txt.Text = "";
-                password_error_txt.Text = "";
+                emailTxtBlock.setText("");
+                passTxtBlock.setText("");
+
+
             });
         }
 
@@ -81,9 +83,8 @@ namespace TestWPPL.Login {
             
             this.Dispatcher.Invoke(() =>
             {
-                //messageTxtBlock.setText(emailError);
-                email_error_txt.Text = emailError;
-                password_error_txt.Text = passError;
+                emailTxtBlock.setText(emailError);
+                passTxtBlock.setText(passError);
             });
             
         }
