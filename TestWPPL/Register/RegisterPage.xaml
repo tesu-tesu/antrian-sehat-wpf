@@ -19,6 +19,7 @@
         <TextBox Name="email_txt" Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Email" Width="176" Margin="212,124,212,-123"/>
         <TextBox Name="password_txt"  Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Password" Width="176" Margin="212,152,212,-151"/>
         <TextBox Name="passwordc_txt" Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Password Confirmation" Width="176" Margin="212,180,212,-179"/>
-        <Button Name="register_btn"  Grid.Row="0" Grid.Column="0" Content="Register" Width="176" Margin="212,217,212,-217"/>
+        <Button Name="register_btn"  Grid.Row="0" Grid.Column="0" Content="Register" Width="176" Margin="212,255,212,-255"/>
+        <TextBox x:Name="passwordc_txt_Copy" Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Password Confirmation" Width="176" Margin="212,180.5,212,-178.5"/>
     </Grid>
 </basic:MyPage>

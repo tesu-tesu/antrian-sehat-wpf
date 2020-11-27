@@ -7,17 +7,24 @@
       xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       xmlns:lineChart="clr-namespace:Velacro.Chart.LineChart;assembly=Velacro"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="600"
+      d:DesignHeight="480" d:DesignWidth="1000"
       Title="LoginPage">
-    <Grid>
+    <Grid Margin="0,0,0,0" Background="#FFF5FAFD">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Width="238" Margin="181,0,181,77"   />
-        <TextBox Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="23" TextWrapping="Wrap" Text="Email"  Width="238" />
-        <TextBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="Password"  Width="238" Margin="181,172,181,116"/>
+        <Grid Margin="-38,4,0,-22" Width="723" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" OpacityMask="#FF9BC0E8">
+            <Grid.Background>
+                <ImageBrush ImageSource="LOGIN.png" Stretch="Fill"/>
+            </Grid.Background>
+        </Grid>
+        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="789,0,81,80" Height="22" HorizontalAlignment="Center" Width="130"   />
+        <TextBox Name="email_txt" Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="24" TextWrapping="Wrap" Text="Email" Margin="734,183,26,250" />
+        <TextBlock Name="email_error_txt" Text="" TextAlignment="Center" Grid.Column="0" Margin="734,0,26,220" Height="22" Foreground="Red" VerticalAlignment="Bottom"/>
+        <PasswordBox PreviewTextInput="password_box_PreviewTextInput" Name="password_box" PasswordChar="*"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="24" Margin="734,239,26,190" Password="asasas"/>
+        <TextBlock Name="password_error_txt" Text="" TextAlignment="Center" Grid.Column="0" Margin="734,0,26,160" Height="22" Foreground="Red" VerticalAlignment="Bottom"/>
     </Grid>
 </basic1:MyPage>

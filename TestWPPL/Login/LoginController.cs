@@ -9,32 +9,45 @@ using Velacro.Basic;
 
 namespace TestWPPL.Login {
     public class LoginController : MyController{
+        ApiClient client;
         public LoginController(IMyView _myView) : base(_myView){
             
         }
 
         public async void login(string _email, string _password) {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            client = new ApiClient("http://127.0.0.1:8000/api/");
             var request = new ApiRequestBuilder();
-
+            
             var req = request
                 .buildHttpRequest()
                 .addParameters("email", _email)
                 .addParameters("password", _password)
-                .setEndpoint("api/login/")
+                .setEndpoint("auth/login/")
                 .setRequestMethod(HttpMethod.Post);
-            client.setOnSuccessRequest(setViewLoginStatus);
+            client.setOnSuccessRequest(setViewSuccessLogin);
+            client.setOnFailedRequest(setViewErrorLogin);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            Console.WriteLine(response.getJObject()["access_token"]);
-            client.setAuthorizationToken(response.getJObject()["access_token"].ToString());
+            //string content = await response.getHttpResponseMessage().Content.ReadAsStringAsync();
+
+        }
+
+        private void setViewErrorLogin(HttpResponseBundle _response)
+        {
+            string message = _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result;
+            Console.WriteLine("error: " + _response.getJObject());
+            getView().callMethod("setErrorLogin", message);
         }
 
         //method yg dijalankan saat request success harus memiliki parameter bertipe HttpResponseBundle
-        private void setViewLoginStatus(HttpResponseBundle _response){
+        private void setViewSuccessLogin(HttpResponseBundle _response){
             if (_response.getHttpResponseMessage().Content != null) {
+                Console.WriteLine("sukses: " + _response.getJObject());
+                client.setAuthorizationToken(_response.getJObject()["access_token"].ToString());
+
                 string status = _response.getHttpResponseMessage().ReasonPhrase;
-                getView().callMethod("setLoginStatus", status);
+                getView().callMethod("setLoginSuccess", status);
             }
         }
+
     }
 }
