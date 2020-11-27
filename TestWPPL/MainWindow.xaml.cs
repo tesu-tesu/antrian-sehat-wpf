@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using TestWPPL.Login;
 using TestWPPL.Register;
 using Velacro.DataStructures;
@@ -12,7 +13,6 @@ namespace TestWPPL {
         public MainWindow() {
             InitializeComponent();
             registerPage = new RegisterPage();
-            loginPage = new LoginPage();
             dashboardPage = new Dashboard.Dashboard();
         }
 
