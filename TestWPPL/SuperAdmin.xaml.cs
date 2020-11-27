@@ -16,13 +16,18 @@ using Velacro.UIElements.Basic;
 namespace TestWPPL
 {
     /// <summary>
-    /// Interaction logic for AuthenticatedWindow.xaml
+    /// Interaction logic for SuperAdmin.xaml
     /// </summary>
-    public partial class AuthenticatedWindow : MyWindow
+    public partial class SuperAdmin : MyWindow
     {
-        public AuthenticatedWindow()
+        public SuperAdmin()
         {
             InitializeComponent();
+        }
+
+        private void logout_btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

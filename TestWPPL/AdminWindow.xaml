@@ -1,0 +1,35 @@
+﻿<basic:MyWindow  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro" 
+                 x:Class="TestWPPL.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWPPL"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="640" Width="1120">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="230*"/>
+            <RowDefinition Height="379*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF31BF9F" Offset="0.004"/>
+                <GradientStop Color="#FFE4FDF7" Offset="0.451"/>
+                <GradientStop Color="#FF6DD3CE" Offset="0.089"/>
+                <GradientStop Color="#FFB4FBFB" Offset="0.238"/>
+                <GradientStop Color="#FFD6F7F0" Offset="0.664"/>
+                <GradientStop Color="#FFBDFFE1" Offset="0.902"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="120,86,0,0" Grid.RowSpan="2"/>
+        <Button Name="list_poly_btn" Content="List Polyclinic" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" Width="99" Click="list_poly_Click" Height="28"/>
+        <Button Name="manage_poly_btn" Content="Manage Polyclinic" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="99" Click="manage_poly_btn_Click" Height="39"/>
+        <Button Name="logout_btn" Content="Logout" HorizontalAlignment="Left" Margin="995,28,0,0" VerticalAlignment="Top" Width="91" Click="logout_btn_Click" Height="38"/>
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="122" Margin="8,14,0,0">
+            <Canvas.Background>
+                <ImageBrush ImageSource="navbar logo.png"/>
+            </Canvas.Background>
+        </Canvas>
+    </Grid>
+</basic:MyWindow>
