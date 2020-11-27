@@ -11,7 +11,7 @@ using Velacro.UIElements.TextBox;
 
 namespace TestWPPL.Login {
 
-    public partial class LoginPage : MyPage {
+    public partial class LoginPage : MyWindow {
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
         private BuilderTextBlock txtBlockBuilder;
@@ -24,7 +24,6 @@ namespace TestWPPL.Login {
 
         public LoginPage() {
             InitializeComponent();
-            this.KeepAlive = true;
             setController(new LoginController(this));
             initUIBuilders();
             initUIElements();
@@ -48,19 +47,21 @@ namespace TestWPPL.Login {
             passTxtBlock = txtBlockBuilder.activate(this, "password_error_txt");
         }
 
+
         public void onLoginButtonClick() {
             getController().callMethod("login", email_txt.Text, password_box.Password.ToString());
         }
 
 
-        public void setLoginSuccess(string _status){
+        public void setLoginSuccess(string _status, string role){
             this.Dispatcher.Invoke(() =>    //jika method ini dipanggil scr async maka pakai dispatcher
             {
                 loginButton.setText(_status);
                 emailTxtBlock.setText("");
                 passTxtBlock.setText("");
 
-
+                new AuthenticatedWindow().Show();
+                this.Close();
             });
         }
 

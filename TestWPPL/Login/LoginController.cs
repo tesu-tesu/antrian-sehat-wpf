@@ -41,11 +41,12 @@ namespace TestWPPL.Login {
         //method yg dijalankan saat request success harus memiliki parameter bertipe HttpResponseBundle
         private void setViewSuccessLogin(HttpResponseBundle _response){
             if (_response.getHttpResponseMessage().Content != null) {
-                Console.WriteLine("sukses: " + _response.getJObject());
+                Console.WriteLine("role: " + _response.getJObject()["user"]["role"]);
+                String role = _response.getJObject()["user"]["role"].ToString();
                 client.setAuthorizationToken(_response.getJObject()["access_token"].ToString());
 
                 string status = _response.getHttpResponseMessage().ReasonPhrase;
-                getView().callMethod("setLoginSuccess", status);
+                getView().callMethod("setLoginSuccess", status, role);
             }
         }
 
