@@ -46,7 +46,11 @@ namespace TestWPPL.Login {
                 client.setAuthorizationToken(_response.getJObject()["access_token"].ToString());
 
                 string status = _response.getHttpResponseMessage().ReasonPhrase;
-                getView().callMethod("setLoginSuccess", status, role);
+                if (role == "Admin" || role == "Super Admin") {
+                    getView().callMethod("setLoginSuccess", status, role);
+                } else {
+                    getView().callMethod("restrictNoAuthentication", status);
+                }                
             }
         }
 

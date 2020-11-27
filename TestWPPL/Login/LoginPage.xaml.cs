@@ -52,7 +52,6 @@ namespace TestWPPL.Login {
             getController().callMethod("login", email_txt.Text, password_box.Password.ToString());
         }
 
-
         public void setLoginSuccess(string _status, string role){
             this.Dispatcher.Invoke(() =>    //jika method ini dipanggil scr async maka pakai dispatcher
             {
@@ -60,8 +59,19 @@ namespace TestWPPL.Login {
                 emailTxtBlock.setText("");
                 passTxtBlock.setText("");
 
-                new AuthenticatedWindow().Show();
+                if (role == "Admin")
+                    new AdminWindow().Show();
+                else if (role == "Super Admin")
+                    new SuperAdmin().Show();
                 this.Close();
+            });
+        }
+
+        public void restrictNoAuthentication(string _status)
+        {
+            this.Dispatcher.Invoke(() =>   
+            {
+                emailTxtBlock.setText("You're not an Admin nor Super Admin");
             });
         }
 
