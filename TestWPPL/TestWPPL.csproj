@@ -86,8 +86,8 @@
     <Compile Include="Admin\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AuthenticatedWindow.xaml.cs">
-      <DependentUpon>AuthenticatedWindow.xaml</DependentUpon>
+    <Compile Include="AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
@@ -98,11 +98,14 @@
     <Compile Include="Register\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuperAdmin.xaml.cs">
+      <DependentUpon>SuperAdmin.xaml</DependentUpon>
+    </Compile>
     <Page Include="Admin\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AuthenticatedWindow.xaml">
+    <Page Include="AdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +133,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Register\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuperAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,6 +169,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Login\LOGIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ANTRIANsehat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Login\ANTRIANsehat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="navbar logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
