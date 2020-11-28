@@ -9,14 +9,27 @@
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="ListUserPage">
 
-    <Grid>
-        <ListView HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="980">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+    <Grid Margin="8">
+        <DataGrid HorizontalContentAlignment="Center" Name="dgUsers" AutoGenerateColumns="False">
+            <DataGrid.Columns>
 
+                <DataGridTextColumn Header="Name" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Phone" Binding="{Binding phone}" />
+                <DataGridTextColumn Header="Health Agency" Binding="{Binding health_agency_id}" />
+
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="Edit"></Button>
+                                <Button Name="button_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="Delete"></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        
     </Grid>
 </basic:MyPage>

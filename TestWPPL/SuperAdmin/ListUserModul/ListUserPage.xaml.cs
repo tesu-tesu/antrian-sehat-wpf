@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
+using Velacro.UIElements.DataGrid;
+using Velacro.UIElements.ListBox;
 
 namespace TestWPPL.SuperAdmin.ListUserModul
 {
@@ -21,6 +23,9 @@ namespace TestWPPL.SuperAdmin.ListUserModul
     /// </summary>
     public partial class ListUserPage : MyPage
     {
+        private BuilderDataGrid builderDataGrid;
+        private IMyDataGrid dataGridUser;
+
         public ListUserPage()
         {
             InitializeComponent();
@@ -30,19 +35,41 @@ namespace TestWPPL.SuperAdmin.ListUserModul
             initUIElements();
         }
 
-        private void initUIElements()
-        {
-
-        }
-
         private void initUIBuilders()
         {
+            builderDataGrid = new BuilderDataGrid();
+        }
 
+        private void initUIElements()
+        {
+            dataGridUser = builderDataGrid.activate(this, "dgUsers");
         }
 
         public void fetchDataUser()
         {
             getController().callMethod("fetchDataUser");
+        }
+
+        public void setListView(List<User> users)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                Console.WriteLine("length: " + users.LongCount());
+                dgUsers.ItemsSource = users;
+                //dataGridUser.setItemsSource<User>((Velacro.Basic.MyList<User>)users);
+            });
+        }
+
+        void edit_OnClick(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Console.WriteLine("Edit action");
+        }
+
+        void delete_OnClick(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Console.WriteLine("Delete action");
         }
     }
 }
