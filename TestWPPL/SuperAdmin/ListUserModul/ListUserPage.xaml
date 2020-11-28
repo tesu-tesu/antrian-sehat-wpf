@@ -1,0 +1,22 @@
+﻿<basic:MyPage  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+               x:Class="TestWPPL.SuperAdmin.ListUserModul.ListUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListUserModul"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000"
+      Title="ListUserPage">
+
+    <Grid>
+        <ListView HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="980">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</basic:MyPage>

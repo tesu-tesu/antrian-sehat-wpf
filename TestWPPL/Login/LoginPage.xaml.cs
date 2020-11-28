@@ -62,7 +62,7 @@ namespace TestWPPL.Login {
                 if (role == "Admin")
                     new AdminWindow().Show();
                 else if (role == "Super Admin")
-                    new SuperAdmin().Show();
+                    new SuperAdminWindow().Show();
                 this.Close();
             });
         }
