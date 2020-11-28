@@ -22,15 +22,43 @@
                 <ImageBrush ImageSource="LOGIN.png" Stretch="Fill"/>
             </Grid.Background>
         </Grid>
-        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="789,0,81,80" Height="22" HorizontalAlignment="Center" Width="130"   />
-        <TextBox Name="email_txt" Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="24" TextWrapping="Wrap" Text="Email" Margin="734,183,26,250" />
-        <TextBlock Name="email_error_txt" Text="" TextAlignment="Center" Grid.Column="0" Margin="734,0,26,220" Height="22" Foreground="Red" VerticalAlignment="Bottom"/>
-        <PasswordBox PreviewTextInput="password_box_PreviewTextInput" Name="password_box" PasswordChar="*"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="24" Margin="734,239,26,190" Password="asasas"/>
-        <TextBlock Name="password_error_txt" Text="" TextAlignment="Center" Grid.Column="0" Margin="734,0,26,160" Height="22" Foreground="Red" VerticalAlignment="Bottom"/>
+        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="785,0,77,78" Height="26" HorizontalAlignment="Center" Width="130"   />
+
         <Canvas HorizontalAlignment="Left" Height="62" Margin="785,67,0,0" VerticalAlignment="Top" Width="130">
             <Canvas.Background>
                 <ImageBrush ImageSource="ANTRIANsehat.png"/>
             </Canvas.Background>
         </Canvas>
+
+        <TextBox Height="24" VerticalAlignment="Center" x:Name="email_txt" Margin="734,184,26,251"/>
+        <TextBlock IsHitTestVisible="False" Text="Email" VerticalAlignment="Center" Margin="737,184,27,251" Foreground="DarkGray" Height="24">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=email_txt}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBlock Name="email_error_txt" Text="" TextAlignment="Center" Grid.Column="0" Margin="734,0,26,220" Height="22" Foreground="Red" VerticalAlignment="Bottom"/>
+
+        <PasswordBox PreviewTextInput="password_box_PreviewTextInput" Name="password_box"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="24" Margin="734,239,26,190" Password=""/>
+        <TextBlock IsHitTestVisible="False" Text="Password" VerticalAlignment="Center" Margin="737,239,26,190" Foreground="DarkGray" Height="24">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Password, ElementName=password_box}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBlock Name="password_error_txt" Text="" TextAlignment="Center" Grid.Column="0" Margin="734,0,26,160" Height="22" Foreground="Red" VerticalAlignment="Bottom"/>
+
     </Grid>
 </basic:MyWindow>

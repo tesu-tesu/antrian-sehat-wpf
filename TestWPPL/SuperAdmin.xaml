@@ -23,9 +23,9 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="120,86,0,0" Grid.RowSpan="2"/>
-        <Button Name="user_btn" Content="List User" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" Width="99" Click="user_btn_Click" Height="28"/>
-        <Button Name="health_agency_btn" Content="List Health&#xD;&#xA; Agency" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="99" Click="health_agency_btn_Click" Height="39"/>
-        <Button Name="logout_btn" Content="Logout" HorizontalAlignment="Left" Margin="995,28,0,0" VerticalAlignment="Top" Width="91" Click="logout_btn_Click" Height="38"/>
+        <Button Name="user_btn" Content="List User" HorizontalAlignment="Left" FontSize="12" HorizontalContentAlignment="Center"  Margin="10,172,0,0" VerticalAlignment="Center" Width="99" Height="38" FontFamily="Poppins" FontWeight="Normal"/>
+        <Button Name="health_agency_btn" Content="List Health&#xD;&#xA;Agency" FontSize="11" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Center" Width="99" Height="41" FontFamily="Poppins" FontWeight="Normal"/>
+        <Button Name="logout_btn" Content="Logout" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30"/>
         <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="122" Margin="8,14,0,0">
             <Canvas.Background>
                 <ImageBrush ImageSource="navbar logo.png"/>
