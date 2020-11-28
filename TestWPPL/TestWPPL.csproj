@@ -86,7 +86,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="Velacro">
+    <Reference Include="Velacro, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Framework\Velacro.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />

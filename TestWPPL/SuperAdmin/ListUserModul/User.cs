@@ -16,8 +16,8 @@ namespace TestWPPL.SuperAdmin
         public object profile_img { get; set; }
         public int health_agency_id { get; set; }
         public string role { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime updated_at { get; set; }
+        //public DateTime created_at { get; set; }
+        //public DateTime updated_at { get; set; }
     }
 
     public class Root

@@ -22,7 +22,17 @@
                 <ImageBrush ImageSource="LOGIN.png" Stretch="Fill"/>
             </Grid.Background>
         </Grid>
-        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="785,0,77,78" Height="26" HorizontalAlignment="Center" Width="130"   />
+        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="LOGIN" Margin="785,0,77,78" Height="26" HorizontalAlignment="Center" Width="130" Background="#FF22B6EE" RenderTransformOrigin="10,10" Foreground="White" OpacityMask="#FF00FF97" BorderBrush="#FFBCDFF3">
+            <Button.Resources>
+                <Style TargetType="Button" x:Key="Round">
+                    <Style.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5" />
+                        </Style>
+                    </Style.Resources>
+                </Style>
+            </Button.Resources>
+        </Button>
 
         <Canvas HorizontalAlignment="Left" Height="62" Margin="785,67,0,0" VerticalAlignment="Top" Width="130">
             <Canvas.Background>

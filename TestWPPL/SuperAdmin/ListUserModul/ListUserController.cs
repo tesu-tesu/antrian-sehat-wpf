@@ -37,7 +37,7 @@ namespace TestWPPL.SuperAdmin
             Console.WriteLine("sukses: " + _response.getJObject());
             List<User> users = _response.getParsedObject<Root>().data;
 
-
+            getView().callMethod("setListView", users);
         }
 
         private void setViewErrorFetch(HttpResponseBundle _response)
