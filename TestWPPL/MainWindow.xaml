@@ -19,7 +19,6 @@
         </Grid.Background>
         <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD"/>
         <Button Name="loginButton_btn" Visibility="Hidden" Content="Login" HorizontalAlignment="Left" Margin="809,12,0,0" VerticalAlignment="Top" Width="75" Click="loginButton_btn_Click" Height="28"/>
-        <Button Name="registerButton_btn" Visibility="Hidden" Content="Register" HorizontalAlignment="Left" Margin="907,10,0,0" VerticalAlignment="Top" Width="75" Click="registerButton_btn_Click" Height="33"/>
         <Button x:Name="dashboardButton_btn" Visibility="Hidden"  Content="Dashboard" HorizontalAlignment="Left" Margin="3,60,0,0" VerticalAlignment="Top" Width="75" Click="dashboardButton_btn_Click"/>
     </Grid>
 </basic1:MyWindow>

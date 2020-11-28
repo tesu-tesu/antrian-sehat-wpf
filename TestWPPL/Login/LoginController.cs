@@ -15,7 +15,8 @@ namespace TestWPPL.Login {
         }
 
         public async void login(string _email, string _password) {
-            client = new ApiClient("http://127.0.0.1:8000/api/");
+            client = ApiAntrianSehat.getInstance().GetApiClient();
+            Console.WriteLine("client: " + client.GetType().ToString());
             var request = new ApiRequestBuilder();
             
             var req = request
