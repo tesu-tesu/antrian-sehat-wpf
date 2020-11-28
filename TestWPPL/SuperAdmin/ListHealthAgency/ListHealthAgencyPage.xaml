@@ -1,22 +1,24 @@
 ﻿<basic:MyPage  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
-               x:Class="TestWPPL.SuperAdmin.ListUserModul.ListUserPage"
+               x:Class="TestWPPL.SuperAdmin.ListHealthAgency.ListHealthAgencyPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListUserModul"
+      xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListHealthAgency"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="1000"
-      Title="ListUserPage">
+      Title="ListHealthAgencyPage">
 
     <Grid Margin="8">
-        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgUsers" AutoGenerateColumns="False">
+        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgHealthAgencies" AutoGenerateColumns="False">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Name" Binding="{Binding name}" />
-                <DataGridTextColumn Header="Phone" Binding="{Binding phone}" />
-                <DataGridTextColumn Header="Health Agency" Binding="{Binding health_agency_id}" />
- 
+                <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding address}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding email}" />
+                <DataGridTextColumn Header="Phone" Binding="{Binding call_center}" />
+                <DataGridTextColumn Header="Picture" Binding="{Binding image}" />
+
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -29,7 +31,7 @@
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
-
+            
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
                     <Setter Property="Background" Value="White" />
@@ -45,7 +47,8 @@
                 </Style>
             </DataGrid.Resources>
             
-        </DataGrid>
-        
+        </DataGrid>        
+
     </Grid>
+    
 </basic:MyPage>

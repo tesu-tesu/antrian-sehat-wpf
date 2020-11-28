@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TestWPPL.Login;
+using TestWPPL.SuperAdmin.ListHealthAgency;
 using TestWPPL.SuperAdmin.ListUserModul;
 using Velacro.Api;
 using Velacro.UIElements.Basic;
@@ -30,6 +31,7 @@ namespace TestWPPL
         {
             InitializeComponent();
             listUserPage = new ListUserPage();
+            listHealthAgencyPage = new ListHealthAgencyPage();
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)
@@ -43,7 +45,8 @@ namespace TestWPPL
 
         private void listHealthAgencyBtnClick(object sender, RoutedEventArgs e)
         {
-
+            mainFrame.Navigate(listHealthAgencyPage);
+            listHealthAgencyPage.callMethod("fetchDataHealthAgency");
         }
 
         private void listUserBtnClick(object sender, RoutedEventArgs e)
