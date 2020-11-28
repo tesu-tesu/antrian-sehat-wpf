@@ -7,30 +7,16 @@
       xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListUserModul"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="1000"
-      Background="#FFF5FAFD"
       Title="ListUserPage">
 
-    <Grid Margin="8">
-        <ListBox Name="lbUser" HorizontalContentAlignment="Stretch" Height="530" Margin="0,10,0,0" VerticalAlignment="Top">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="80" />
-                            <ColumnDefinition Width="80" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock VerticalAlignment="Center" Text="{Binding name}" />
-                        <TextBlock VerticalAlignment="Center" Text="{Binding phone}" />
-                        <TextBlock VerticalAlignment="Center" Text="{Binding health_agency_id}" />
-                        <Button Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="Edit"></Button>
-                        <Button Name="button_btn" Grid.Column="2" Click="delete_OnClick" Background="WhiteSmoke" Content="Delete"></Button>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+    <Grid>
+        <ListView HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="980">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </basic:MyPage>

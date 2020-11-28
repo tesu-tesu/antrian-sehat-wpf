@@ -24,7 +24,7 @@
         <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="120,86,0,0" Grid.RowSpan="2"/>
         <Button Name="user_btn" Content="List User" HorizontalAlignment="Left" FontSize="12" HorizontalContentAlignment="Center"  Margin="10,172,0,0" VerticalAlignment="Center" Width="99" Height="38" FontFamily="Poppins" FontWeight="Normal"  Click="listUserBtnClick"/>
         <Button Name="health_agency_btn" Content="List Health&#xD;&#xA;Agency" FontSize="11" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Center" Width="99" Height="41" FontFamily="Poppins" FontWeight="Normal"  Click="listHealthAgencyBtnClick"/>
-        <Button Name="logout_btn" Foreground="Red" Content="Logout" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30"  Click="logoutBtnClick"/>
+        <Button Name="logout_btn" Content="Logout" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30"  Click="logoutBtnClick"/>
         <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="122" Margin="8,14,0,0">
             <Canvas.Background>
                 <ImageBrush ImageSource="navbar logo.png"/>

@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
-using Velacro.UIElements.ListBox;
-using Velacro.UIElements.ListView;
 
 namespace TestWPPL.SuperAdmin.ListUserModul
 {
@@ -23,9 +21,6 @@ namespace TestWPPL.SuperAdmin.ListUserModul
     /// </summary>
     public partial class ListUserPage : MyPage
     {
-        private BuilderListBox builderListBox;
-        private IMyListBox listBoxUser;
-
         public ListUserPage()
         {
             InitializeComponent();
@@ -35,41 +30,19 @@ namespace TestWPPL.SuperAdmin.ListUserModul
             initUIElements();
         }
 
-        private void initUIBuilders()
-        {
-            builderListBox = new BuilderListBox();
-        }
-
-
         private void initUIElements()
         {
-            listBoxUser = builderListBox.activate(this, "lbUser");
+
         }
+
+        private void initUIBuilders()
+        {
+
+        }
+
         public void fetchDataUser()
         {
             getController().callMethod("fetchDataUser");
-        }
-
-        public void setListView(List<User> users)
-        {
-            this.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine("length: " + users.LongCount());
-                lbUser.ItemsSource = users;
-                //listBoxUser.setItemsSource<User>((Velacro.Basic.MyList<User>)users);
-            });
-        }
-
-        void edit_OnClick(object sender, RoutedEventArgs e)
-        {
-            Button button = sender as Button;
-            Console.WriteLine("Edit action");
-        }
-
-        void delete_OnClick(object sender, RoutedEventArgs e)
-        {
-            Button button = sender as Button;
-            Console.WriteLine("Delete action");
         }
     }
 }
