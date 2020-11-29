@@ -23,7 +23,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="120,86,0,0" Grid.RowSpan="2"/>
-        <Button Name="list_poly_btn" Content="List Polyclinic" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" Margin="10,172,0,0" VerticalAlignment="Center" Width="99" Height="38"/>
+        <Button Name="list_poly_btn" Content="List Polyclinic" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" Margin="10,172,0,0" VerticalAlignment="Center" Width="99" Height="38" Click="listPolyclinicBtnClick"/>
         <Button Name="manage_poly_btn" Content="Manage&#xD;&#xA;Polyclinic" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" Margin="10,34,0,0" VerticalAlignment="Center" Width="99" Height="39"/>
         <Button Name="logout_btn" Content="Logout" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30"/>
         <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="122" Margin="8,14,0,0">
