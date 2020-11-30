@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TestWPPL.Admin.Polyclinic;
 using Velacro.UIElements.Basic;
 using TestWPPL.Login;
 using TestWPPL.Admin.ListPolyclinic;
@@ -24,6 +25,8 @@ namespace TestWPPL
     public partial class AdminWindow : MyWindow
     {
         private MyPage listPolyclinicPage;
+        private MyPage createPolyclinicSchedule;
+
         public AdminWindow()
         {
             InitializeComponent();
