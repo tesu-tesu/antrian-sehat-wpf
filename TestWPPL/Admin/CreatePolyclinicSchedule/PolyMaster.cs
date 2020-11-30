@@ -12,7 +12,7 @@ namespace TestWPPL.Admin.Polyclinic
         public String name { get; set; }
     }
 
-    public class Root
+    public class RootPoly
     {
         public bool success { get; set; }
         public string message { get; set; }

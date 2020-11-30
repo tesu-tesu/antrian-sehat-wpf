@@ -106,22 +106,12 @@
       <DependentUpon>ListPolyclinicPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListPolyclinic\Polyclinic.cs" />
-    <Compile Include="Admin\Polyclinic\CreatePolyclinicScheduleController.cs" />
-    <Compile Include="Admin\Polyclinic\PolyMaster.cs" />
-    <Compile Include="Admin\Polyclinic\ScheduleTime.cs" />
-    <Compile Include="Admin\Polyclinic\CreatePolyclinicSchedule.xaml.cs">
-      <DependentUpon>CreatePolyclinicSchedule.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ListPolyclinic\ListPolyclinicController.cs" />
-    <Compile Include="Admin\ListPolyclinic\ListPolyclinicPage.xaml.cs">
-      <DependentUpon>ListPolyclinicPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ListPolyclinic\Polyclinic.cs" />
-    <Compile Include="Admin\Polyclinic\CreatePolyclinicScheduleController.cs" />
-    <Compile Include="Admin\Polyclinic\PolyMaster.cs" />
-    <Compile Include="Admin\Polyclinic\ScheduleTime.cs" />
-    <Compile Include="Admin\Polyclinic\CreatePolyclinicSchedule.xaml.cs">
-      <DependentUpon>CreatePolyclinicSchedule.xaml</DependentUpon>
+    <Compile Include="Admin\CreatePolyclinicSchedule\CreatePolyclinicScheduleController.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\Polyclinic.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\PolyMaster.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\Schedule.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\CreatePolyclinicSchedulePage.xaml.cs">
+      <DependentUpon>CreatePolyclinicSchedulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ApiAntrianSehat.cs" />
     <Compile Include="SuperAdminWindow.xaml.cs">
@@ -151,7 +141,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Admin\Polyclinic\CreatePolyclinicSchedule.xaml">
+    <Page Include="Admin\CreatePolyclinicSchedule\CreatePolyclinicSchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TestWPPL.Admin.Polyclinic"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      x:Class="TestWPPL.Admin.Polyclinic.CreatePolyclinicSchedule"
+      x:Class="TestWPPL.Admin.CreatePolyclinicSchedule.CreatePolyclinicSchedulePage"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="CreatePolyclinicSchedule">
@@ -14,23 +14,25 @@
             <Setter Property="Background" Value="White" />
             <Setter Property="Foreground" Value="Black" />
             <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="FontFamily" Value="Ti"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
             <Setter Property="Width" Value="auto"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
     </basic:MyPage.Resources>
     <Grid Margin="8" Background="White">
-
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tambah Poliklinik" VerticalAlignment="Top" Height="29" Width="201" FontFamily="Poppins" FontSize="18"/>
-        <ComboBox x:Name="PolyMaster_CombB" IsTextSearchEnabled="True" HorizontalAlignment="Left" Margin="13,82,0,0" VerticalAlignment="Top" Width="168" AutomationProperties.Name="polyMaster"/>
+        <ComboBox Name="PolyMaster_CombB" IsTextSearchEnabled="True" HorizontalAlignment="Left" Margin="13,82,0,0" VerticalAlignment="Top" Width="168" AutomationProperties.Name="polyMaster"/>
         <TextBlock Text="Nama Poliklinik" HorizontalAlignment="Left" Margin="13,55,0,0" VerticalAlignment="Top" Width="165" FontSize="14"/>
+
+        <Button Name="SavePoly_bt" Content="Simpan Nama Poliklinik" HorizontalAlignment="Left" Margin="228,78,0,0" VerticalAlignment="Top" Width="180"/>
+        <TextBlock Name="SuccessPoly_txt" HorizontalAlignment="Left" Margin="439,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="19" Width="199"/>
+
         <TextBlock Text="Jam Buka" HorizontalAlignment="Left" Margin="19,138,0,0" VerticalAlignment="Top" Width="165" FontSize="14"/>
+        <materialDesign:TimePicker Is24Hours="true" Name="TimeOpen_Tp" HorizontalAlignment="Left" Margin="19,170,0,0" VerticalAlignment="Top" Width="168"/>
         <TextBlock Text="Jam Tutup" HorizontalAlignment="Left" Margin="320,138,0,0" VerticalAlignment="Top" Width="165" FontSize="14"/>
+        <materialDesign:TimePicker Is24Hours="true" Name="TimeClose_Tp" HorizontalAlignment="Left" Margin="320,170,0,0" VerticalAlignment="Top" Width="168"/>
 
-        <materialDesign:TimePicker Is24Hours="true" x:Name="TimeOpen_Tp" HorizontalAlignment="Left" Margin="19,170,0,0" VerticalAlignment="Top" Width="168"/>
-        <materialDesign:TimePicker Is24Hours="true" x:Name="TimeClose_Tp" HorizontalAlignment="Left" Margin="320,170,0,0" VerticalAlignment="Top" Width="168"/>
-
-        <Grid Margin="0, 0, 600 , 0" Width="360" Height="100">
+        <Grid Margin="16,225,612,217" Name="Day_Cb">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0*"/>
                 <ColumnDefinition/>
@@ -40,37 +42,38 @@
                 <WrapPanel Orientation="Horizontal" Width="360">
                     <WrapPanel Orientation="Vertical">
                         <TextBlock Text="Senin" Padding="8"/>
-                        <CheckBox HorizontalAlignment="Center" x:Name="Senin_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
+                        <CheckBox HorizontalAlignment="Center" Name="Senin_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical">
                         <TextBlock Text="Selasa" Padding="8"/>
-                        <CheckBox HorizontalAlignment="Center" x:Name="Selasa_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
+                        <CheckBox HorizontalAlignment="Center" Name="Selasa_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical">
                         <TextBlock Text="Rabu" Padding="8"/>
-                        <CheckBox HorizontalAlignment="Center" x:Name="Rabu_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
+                        <CheckBox HorizontalAlignment="Center" Name="Rabu_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical">
                         <TextBlock Text="Kamis" Padding="8"/>
-                        <CheckBox HorizontalAlignment="Center" x:Name="Kamis_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
+                        <CheckBox HorizontalAlignment="Center" Name="Kamis_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical">
                         <TextBlock Text="Jumat" Padding="8"/>
-                        <CheckBox HorizontalAlignment="Center" x:Name="Jumat_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
+                        <CheckBox HorizontalAlignment="Center" Name="Jumat_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical">
                         <TextBlock Text="Sabtu" Padding="8"/>
-                        <CheckBox HorizontalAlignment="Center" x:Name="Sabtu_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
+                        <CheckBox HorizontalAlignment="Center" Name="Sabtu_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical">
                         <TextBlock Text="Minggu" Padding="8"/>
-                        <CheckBox HorizontalAlignment="Center" x:Name="Minggu_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
+                        <CheckBox HorizontalAlignment="Center" Name="Minggu_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
                     </WrapPanel>
                 </WrapPanel>
             </WrapPanel>
 
         </Grid>
-        <Button Content="Simpan Semua" HorizontalAlignment="Left" Margin="125,364,0,0" VerticalAlignment="Top" />
+        <Button Name="SaveSchedule_bt" Content="Simpan Semua Jadwal" IsEnabled="False" HorizontalAlignment="Left" Margin="95,364,0,0" VerticalAlignment="Top" />
+        <TextBlock Name="ErrorSchedule_txt" HorizontalAlignment="Left" Margin="406,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 
 
     </Grid>

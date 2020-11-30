@@ -6,20 +6,18 @@ using System.Threading.Tasks;
 
 namespace TestWPPL.Admin.Polyclinic
 {
-    class ScheduleTime
+    public class Schedule
     {
-        private String day;
-        private String timeOpen;
-        private String timeClose;
-
-        public ScheduleTime(String day, String timeOpen, String timeClose)
+        public int id { get; set; }
+        public String day { get; set; }
+        public String timeOpen { get; set; }
+        public String timeClose { get; set; }
+        
+        public Schedule()
         {
-            this.day = day;
-            this.timeOpen = timeOpen;
-            this.timeClose = timeClose;
         }
 
-        public ScheduleTime(string timeOpen, string timeClose)
+        public Schedule(string timeOpen, string timeClose)
         {
             this.timeOpen = timeOpen;
             this.timeClose = timeClose;
@@ -44,5 +42,12 @@ namespace TestWPPL.Admin.Polyclinic
         {
             return timeClose;
         }
+    }
+
+    public class RootSchedule
+    {
+        public bool success { get; set; }
+        public string message { get; set; }
+        public Schedule data { get; set; }
     }
 }

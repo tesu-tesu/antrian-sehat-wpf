@@ -25,12 +25,13 @@ namespace TestWPPL
     public partial class AdminWindow : MyWindow
     {
         private MyPage listPolyclinicPage;
-        private MyPage createPolyclinicSchedule;
+        private MyPage createPolyclinicSchedulePage;
 
         public AdminWindow()
         {
             InitializeComponent();
             listPolyclinicPage = new ListPolyclinicPage();
+            createPolyclinicSchedulePage = new CreatePolyclinicSchedulePage();
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)
@@ -46,6 +47,12 @@ namespace TestWPPL
         {
             mainFrame.Navigate(listPolyclinicPage);
             listPolyclinicPage.callMethod("fetchDataPolyclinic");
+        }
+
+        private void managePolyclinicBtnClick(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(createPolyclinicSchedulePage);
+            createPolyclinicSchedulePage.callMethod("fetchDataPolyMaster");
         }
     }
 }
