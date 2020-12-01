@@ -110,8 +110,11 @@
     <Compile Include="SuperAdminWindow.xaml.cs">
       <DependentUpon>SuperAdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuperAdmin\ListHealthAgency\AddHealthAgency.xaml.cs">
+      <DependentUpon>AddHealthAgency.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SuperAdmin\ListHealthAgency\HealthAgency.cs" />
-    <Compile Include="SuperAdmin\ListHealthAgency\ListHealthAgencyController.cs" />
+    <Compile Include="SuperAdmin\ListHealthAgency\HealthAgencyController.cs" />
     <Compile Include="SuperAdmin\ListHealthAgency\ListHealthAgencyPage.xaml.cs">
       <DependentUpon>ListHealthAgencyPage.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SuperAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuperAdmin\ListHealthAgency\AddHealthAgency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -4,14 +4,15 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using Velacro.Api;
 using Velacro.Basic;
 
 namespace TestWPPL.SuperAdmin.ListHealthAgency
 {
-    class ListHealthAgencyController : MyController
+    class HealthAgencyController : MyController
     {
-        public ListHealthAgencyController(IMyView _myView) : base(_myView)
+        public HealthAgencyController(IMyView _myView) : base(_myView)
         {
 
         }
@@ -42,6 +43,21 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
             Pagination healthAgencyPagination = _response.getParsedObject<Root>().data;
 
             getView().callMethod("setListView", healthAgencyPagination);
+        }
+
+        public void deleteProcess(Button btn)
+        {
+            HealthAgency dataObject = btn.DataContext as HealthAgency;
+
+            Console.WriteLine("index: " + dataObject.id);
+
+        }
+
+        public void editProcess(Button btn)
+        {
+            HealthAgency dataObject = btn.DataContext as HealthAgency;
+
+            Console.WriteLine("index: " + dataObject.id);
         }
 
     }
