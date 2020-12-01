@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TestWPPL.Admin.Polyclinic;
+using TestWPPL.Admin.CreatePolyclinicSchedule;
 using Velacro.UIElements.Basic;
 using TestWPPL.Login;
 using TestWPPL.Admin.ListPolyclinic;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Velacro.Api;
 using Velacro.Basic;
 
-namespace TestWPPL.Admin.Polyclinic
+namespace TestWPPL.Admin.CreatePolyclinicSchedule
 {
     public class CreatePolyclinicScheduleController : MyController
     {
