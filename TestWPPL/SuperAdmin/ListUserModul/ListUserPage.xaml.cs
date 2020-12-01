@@ -27,14 +27,12 @@ namespace TestWPPL.SuperAdmin.ListUserModul
     {
         private BuilderDataGrid builderDataGrid;
         private IMyDataGrid dataGridUser;
-        private MyPage createUserPage;
 
         public ListUserPage()
         {
             InitializeComponent();
             this.KeepAlive = true;
             setController(new ListUserController(this));
-            createUserPage = new CreateUserPage();
             initUIBuilders();
             initUIElements();
         }
@@ -76,10 +74,5 @@ namespace TestWPPL.SuperAdmin.ListUserModul
             Console.WriteLine("Delete action");
         }
 
-        void addUser(object sender, RoutedEventArgs e)
-        {
-            FrameService.frame.Navigate(createUserPage);
-            createUserPage.callMethod("fetchDataHealthAgency");
-        }
     }
 }

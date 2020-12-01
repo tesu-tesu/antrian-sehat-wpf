@@ -10,13 +10,13 @@
       Title="ListUserPage">
 
     <Grid Margin="8">
-        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgUsers" AutoGenerateColumns="False" Margin="0,50,0,0">
+        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgUsers" AutoGenerateColumns="False">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Name" Binding="{Binding name}" />
                 <DataGridTextColumn Header="Phone" Binding="{Binding phone}" />
                 <DataGridTextColumn Header="Health Agency" Binding="{Binding health_agency_id}" />
- 
+
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -44,9 +44,8 @@
                     <Setter Property="VerticalAlignment" Value="Center"/>
                 </Style>
             </DataGrid.Resources>
-            
+
         </DataGrid>
-        <Button Content="Tambah User" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="addUser"/>
 
     </Grid>
 </basic:MyPage>
