@@ -120,8 +120,14 @@
     <Compile Include="SuperAdmin\ListHealthAgency\AddHealthAgency.xaml.cs">
       <DependentUpon>AddHealthAgency.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuperAdmin\ListHealthAgency\CreateHealthAgency\CreateHealthAgencyPage.xaml.cs">
+      <DependentUpon>CreateHealthAgencyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin\ListHealthAgency\EditHealthAgency\EditHealthAgencyPage.xaml.cs">
+      <DependentUpon>EditHealthAgencyPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SuperAdmin\ListHealthAgency\HealthAgency.cs" />
-    <Compile Include="SuperAdmin\ListHealthAgency\HealthAgencyController.cs" />
+    <Compile Include="SuperAdmin\ListHealthAgency\ListHealthAgencyController.cs" />
     <Compile Include="SuperAdmin\ListHealthAgency\ListHealthAgencyPage.xaml.cs">
       <DependentUpon>ListHealthAgencyPage.xaml</DependentUpon>
     </Compile>
@@ -176,6 +182,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SuperAdmin\ListHealthAgency\AddHealthAgency.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuperAdmin\ListHealthAgency\CreateHealthAgency\CreateHealthAgencyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuperAdmin\ListHealthAgency\EditHealthAgency\EditHealthAgencyPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -30,7 +30,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         {
             InitializeComponent();
             this.KeepAlive = true;
-            setController(new HealthAgencyController(this));
+            setController(new ListHealthAgencyController(this));
             initUIBuilders();
             initUIElements();
         }
