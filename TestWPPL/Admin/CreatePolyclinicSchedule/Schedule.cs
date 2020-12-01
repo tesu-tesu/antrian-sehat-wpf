@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestWPPL.Admin.Polyclinic
+namespace TestWPPL.Admin.CreatePolyclinicSchedule
 {
     public class Schedule
     {

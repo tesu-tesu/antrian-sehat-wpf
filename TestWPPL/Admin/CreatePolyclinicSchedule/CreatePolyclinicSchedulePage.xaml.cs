@@ -17,7 +17,7 @@ using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.ComboBox;
 using Velacro.UIElements.Button;
 
-namespace TestWPPL.Admin.Polyclinic
+namespace TestWPPL.Admin.CreatePolyclinicSchedule
 {
     /// <summary>
     /// Interaction logic for CreatePolyclinicSchedule.xaml
