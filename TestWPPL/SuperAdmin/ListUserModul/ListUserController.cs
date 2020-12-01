@@ -8,6 +8,7 @@ using TestWPPL.SuperAdmin;
 using Velacro.Api;
 using Velacro.Basic;
 using TestWPPL.SuperAdmin;
+using TestWPPL.SuperAdmin.ListHealthAgency;
 
 namespace TestWPPL.SuperAdmin
 {
@@ -35,7 +36,7 @@ namespace TestWPPL.SuperAdmin
         private void setViewSuccessFetch(HttpResponseBundle _response)
         {
             Console.WriteLine("sukses: " + _response.getJObject());
-            List<User> users = _response.getParsedObject<Root>().data;
+            List<User> users = _response.getParsedObject<RootUser>().data;
 
             getView().callMethod("setListView", users);
         }

@@ -10,7 +10,7 @@
       Title="ListUserPage">
 
     <Grid Margin="8">
-        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgUsers" AutoGenerateColumns="False">
+        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgUsers" AutoGenerateColumns="False" Margin="0,50,0,0">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Name" Binding="{Binding name}" />
@@ -46,6 +46,7 @@
             </DataGrid.Resources>
             
         </DataGrid>
-        
+        <Button Content="Tambah User" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="addUser"/>
+
     </Grid>
 </basic:MyPage>

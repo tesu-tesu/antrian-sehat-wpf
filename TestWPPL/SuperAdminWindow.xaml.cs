@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TestWPPL.Login;
+using TestWPPL.Service;
 using TestWPPL.SuperAdmin.ListHealthAgency;
 using TestWPPL.SuperAdmin.ListUserModul;
 using Velacro.Api;
@@ -30,6 +31,7 @@ namespace TestWPPL
         public SuperAdminWindow()
         {
             InitializeComponent();
+            FrameService.frame = mainFrame;
             listUserPage = new ListUserPage();
             listHealthAgencyPage = new ListHealthAgencyPage();
         }
