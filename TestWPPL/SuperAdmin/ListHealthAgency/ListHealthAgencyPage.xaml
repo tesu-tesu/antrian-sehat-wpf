@@ -4,8 +4,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListHealthAgency"
-      mc:Ignorable="d" 
+      xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListHealthAgency" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+               mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="ListHealthAgencyPage">
 
@@ -23,15 +23,15 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Button Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="Edit"></Button>
-                                <Button Name="button_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="Delete"></Button>
+                                <Button ToolTip="Edit" Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Edit}"/>
+                                <Button ToolTip="Delete" Name="button_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Trash}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
-            
+
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
                     <Setter Property="Background" Value="White" />
@@ -46,9 +46,9 @@
                     <Setter Property="VerticalAlignment" Value="Center"/>
                 </Style>
             </DataGrid.Resources>
-            
-        </DataGrid>        
+
+        </DataGrid>
 
     </Grid>
-    
+
 </basic:MyPage>

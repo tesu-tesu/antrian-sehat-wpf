@@ -24,12 +24,13 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
     {
         private BuilderDataGrid builderDataGrid;
         private IMyDataGrid dataGridHA;
+        List<HealthAgency> healthAgencies;
 
         public ListHealthAgencyPage()
         {
             InitializeComponent();
             this.KeepAlive = true;
-            setController(new ListHealthAgencyController(this));
+            setController(new HealthAgencyController(this));
             initUIBuilders();
             initUIElements();
         }
@@ -53,7 +54,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         {
             this.Dispatcher.Invoke(() =>
             {
-                List<HealthAgency> healthAgencies = paginationHA.data;
+                healthAgencies = paginationHA.data;
                 Console.WriteLine("length: " + healthAgencies.LongCount());
                 dgHealthAgencies.ItemsSource = healthAgencies;
             });
@@ -62,13 +63,20 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         void edit_OnClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            Console.WriteLine("Edit action");
+            getController().callMethod("editProcess", button);
+
+            dgHealthAgencies.ItemsSource = new List<HealthAgency>();
+            //navigate ke halaman edit dgn mengirimkan id HA
+
         }
 
         void delete_OnClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            Console.WriteLine("Delete action");
+            getController().callMethod("deleteProcess", button);
+
+            dgHealthAgencies.ItemsSource = new List<HealthAgency>();
+            //dgHealthAgencies.ItemsSource = itemlist baru
         }
 
     }
