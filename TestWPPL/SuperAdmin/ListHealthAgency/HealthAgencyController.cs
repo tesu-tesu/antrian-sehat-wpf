@@ -40,7 +40,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         private void setViewSuccessFetch(HttpResponseBundle _response)
         {
             Console.WriteLine("sukses: " + _response.getJObject());
-            Pagination healthAgencyPagination = _response.getParsedObject<Root>().data;
+            Pagination healthAgencyPagination = _response.getParsedObject<RootHealthAgency>().data;
 
             getView().callMethod("setListView", healthAgencyPagination);
         }

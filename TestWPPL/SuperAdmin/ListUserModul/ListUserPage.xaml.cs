@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestWPPL.Service;
+using TestWPPL.SuperAdmin.ListUserModul.CreateUser;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.DataGrid;
 using Velacro.UIElements.ListBox;
@@ -25,12 +27,14 @@ namespace TestWPPL.SuperAdmin.ListUserModul
     {
         private BuilderDataGrid builderDataGrid;
         private IMyDataGrid dataGridUser;
+        private MyPage createUserPage;
 
         public ListUserPage()
         {
             InitializeComponent();
             this.KeepAlive = true;
             setController(new ListUserController(this));
+            createUserPage = new CreateUserPage();
             initUIBuilders();
             initUIElements();
         }
@@ -70,6 +74,12 @@ namespace TestWPPL.SuperAdmin.ListUserModul
         {
             Button button = sender as Button;
             Console.WriteLine("Delete action");
+        }
+
+        void addUser(object sender, RoutedEventArgs e)
+        {
+            FrameService.frame.Navigate(createUserPage);
+            createUserPage.callMethod("fetchDataHealthAgency");
         }
     }
 }
