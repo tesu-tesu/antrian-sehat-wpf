@@ -23,8 +23,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Button Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Edit}"/>
-                                <Button Name="button_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Trash}"/>
+                                <Button ToolTip="Edit" Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Edit}"/>
+                                <Button ToolTip="Delete" Name="button_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Trash}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
