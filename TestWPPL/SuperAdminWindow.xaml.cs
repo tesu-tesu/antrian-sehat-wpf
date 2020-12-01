@@ -15,6 +15,7 @@ using TestWPPL.Login;
 using TestWPPL.Service;
 using TestWPPL.SuperAdmin.ListHealthAgency;
 using TestWPPL.SuperAdmin.ListUserModul;
+using TestWPPL.SuperAdmin.ListUserModul.CreateUser;
 using Velacro.Api;
 using Velacro.UIElements.Basic;
 
@@ -27,6 +28,7 @@ namespace TestWPPL
     {
         private MyPage listUserPage;
         private MyPage listHealthAgencyPage;
+        private MyPage createUserPage;
 
         public SuperAdminWindow()
         {
@@ -34,6 +36,7 @@ namespace TestWPPL
             FrameService.frame = mainFrame;
             listUserPage = new ListUserPage();
             listHealthAgencyPage = new ListHealthAgencyPage();
+            createUserPage = new CreateUserPage();
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)
@@ -70,7 +73,8 @@ namespace TestWPPL
 
         void addUser_OnClick(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("add User");
+            mainFrame.Navigate(createUserPage);
+            createUserPage.callMethod("fetchDataHealthAgency");
         }
     }
 }

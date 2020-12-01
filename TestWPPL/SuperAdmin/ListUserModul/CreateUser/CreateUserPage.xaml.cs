@@ -30,10 +30,10 @@ namespace TestWPPL.SuperAdmin.ListUserModul.CreateUser
             setController(new CreateUserController(this));
         }
 
-        /*public void fetchDataHealthAgency()
+        public void fetchDataHealthAgency()
         {
             getController().callMethod("fetchDataHealthAgency");
-        }*/
+        }
 
         public void setComboBox(List<HealthAgency> healthAgencies)
         {
