@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TestWPPL.Admin.CreatePolyclinicSchedule;
 using Velacro.UIElements.Basic;
 using TestWPPL.Login;
 using TestWPPL.Admin.ListPolyclinic;
@@ -24,10 +25,13 @@ namespace TestWPPL
     public partial class AdminWindow : MyWindow
     {
         private MyPage listPolyclinicPage;
+        private MyPage createPolyclinicSchedulePage;
+
         public AdminWindow()
         {
             InitializeComponent();
             listPolyclinicPage = new ListPolyclinicPage();
+            createPolyclinicSchedulePage = new CreatePolyclinicSchedulePage();
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)
@@ -43,6 +47,12 @@ namespace TestWPPL
         {
             mainFrame.Navigate(listPolyclinicPage);
             listPolyclinicPage.callMethod("fetchDataPolyclinic");
+        }
+
+        private void managePolyclinicBtnClick(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(createPolyclinicSchedulePage);
+            createPolyclinicSchedulePage.callMethod("fetchDataPolyMaster");
         }
     }
 }

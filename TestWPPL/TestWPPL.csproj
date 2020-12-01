@@ -106,6 +106,13 @@
       <DependentUpon>ListPolyclinicPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListPolyclinic\Polyclinic.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\CreatePolyclinicScheduleController.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\Polyclinic.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\PolyMaster.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\Schedule.cs" />
+    <Compile Include="Admin\CreatePolyclinicSchedule\CreatePolyclinicSchedulePage.xaml.cs">
+      <DependentUpon>CreatePolyclinicSchedulePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ApiAntrianSehat.cs" />
     <Compile Include="SuperAdminWindow.xaml.cs">
       <DependentUpon>SuperAdminWindow.xaml</DependentUpon>
@@ -134,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Admin\ListPolyclinic\ListPolyclinicPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\CreatePolyclinicSchedule\CreatePolyclinicSchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
