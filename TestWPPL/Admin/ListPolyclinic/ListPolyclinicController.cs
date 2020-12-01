@@ -23,7 +23,7 @@ namespace TestWPPL.Admin.ListPolyclinic
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/health-agency/6/polyclinic")
+                .setEndpoint("admin/health-agency/1/polyclinic")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetch);
             client.setOnFailedRequest(setViewErrorFetch);
