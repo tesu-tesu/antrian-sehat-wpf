@@ -20,7 +20,7 @@ namespace TestWPPL.SuperAdmin
         //public DateTime updated_at { get; set; }
     }
 
-    public class Root
+    public class RootUser
     {
         public bool success { get; set; }
         public string message { get; set; }

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Velacro.Basic;
 
 namespace TestWPPL.SuperAdmin.ListHealthAgency
 {
     public class HealthAgency
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public string address { get; set; }
+        public String name { get; set; }
+        public String address { get; set; }
         public object image { get; set; }
-        public string call_center { get; set; }
-        public string email { get; set; }
+        public String call_center { get; set; }
+        public String email { get; set; }
         //public DateTime created_at { get; set; }
         //public DateTime updated_at { get; set; }
     }
@@ -34,10 +35,17 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         public int total { get; set; }
     }
 
-    public class Root
+    public class RootHealthAgency
     {
         public bool success { get; set; }
         public string message { get; set; }
         public Pagination data { get; set; }
+    }
+
+    public class RootHealthAgency2
+    {
+        public bool success { get; set; }
+        public string message { get; set; }
+        public List<HealthAgency> data { get; set; }
     }
 }

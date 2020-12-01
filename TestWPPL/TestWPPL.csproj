@@ -114,6 +114,7 @@
       <DependentUpon>CreatePolyclinicSchedulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ApiAntrianSehat.cs" />
+    <Compile Include="Service\FrameService.cs" />
     <Compile Include="SuperAdminWindow.xaml.cs">
       <DependentUpon>SuperAdminWindow.xaml</DependentUpon>
     </Compile>
@@ -130,6 +131,10 @@
     <Compile Include="SuperAdmin\ListHealthAgency\ListHealthAgencyController.cs" />
     <Compile Include="SuperAdmin\ListHealthAgency\ListHealthAgencyPage.xaml.cs">
       <DependentUpon>ListHealthAgencyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin\ListUserModul\CreateUser\CreateUserController.cs" />
+    <Compile Include="SuperAdmin\ListUserModul\CreateUser\CreateUserPage.xaml.cs">
+      <DependentUpon>CreateUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SuperAdmin\ListUserModul\ListUserController.cs" />
     <Compile Include="Dashboard\Dashboard.xaml.cs">
@@ -194,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SuperAdmin\ListHealthAgency\ListHealthAgencyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuperAdmin\ListUserModul\CreateUser\CreateUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
