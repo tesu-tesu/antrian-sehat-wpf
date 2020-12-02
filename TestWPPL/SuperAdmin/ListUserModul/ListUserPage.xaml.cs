@@ -33,8 +33,8 @@ namespace TestWPPL.SuperAdmin.ListUserModul
         {
             InitializeComponent();
             this.KeepAlive = true;
-            setController(new ListUserController(this));
             createUserPage = new CreateUserPage();
+            setController(new ListUserController(this));
             initUIBuilders();
             initUIElements();
         }

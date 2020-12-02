@@ -5,12 +5,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListUserModul"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="ListUserPage">
 
     <Grid Margin="8">
-        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgUsers" AutoGenerateColumns="False" Margin="0,50,0,0">
+        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgUsers" 
+                  AutoGenerateColumns="False" Margin="0,50,0,0">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Name" Binding="{Binding name}" />
@@ -21,8 +23,10 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Button Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="Edit"></Button>
-                                <Button Name="button_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="Delete"></Button>
+                                <Button Name="edit_btn" Grid.Column="1" Click="edit_OnClick" 
+                                        Background="WhiteSmoke" Content="Edit"></Button>
+                                <Button Name="button_btn" Grid.Column="1" Click="delete_OnClick" 
+                                        Background="WhiteSmoke" Content="Delete"></Button>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -31,7 +35,8 @@
             </DataGrid.Columns>
 
             <DataGrid.Resources>
-                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" 
+                       TargetType="{x:Type DataGridColumnHeader}" >
                     <Setter Property="Background" Value="White" />
                     <Setter Property="Foreground" Value="Black" />
                     <Setter Property="BorderBrush" Value="Black"/>
@@ -46,7 +51,16 @@
             </DataGrid.Resources>
             
         </DataGrid>
-        <Button Content="Tambah User" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="addUser"/>
-
+        
+        <Button Name="add_user_btn" ToolTip="Add User" FontSize="13" Height="35" Click="addUser" 
+                Background="WhiteSmoke"  VerticalAlignment="Top" HorizontalAlignment="Right" 
+                Margin="0,0,10,10" >
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="{materialDesign:PackIcon Plus}"/>
+                    <Label Content="{materialDesign:PackIcon User}"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
     </Grid>
 </basic:MyPage>

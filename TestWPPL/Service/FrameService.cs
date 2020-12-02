@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using Velacro.UIElements.Basic;
 
 namespace TestWPPL.Service
 {
     class FrameService
     {
         public static Frame frame { get; set; }
+        public static MyPage mainPage { get; set; }
     }
 }
