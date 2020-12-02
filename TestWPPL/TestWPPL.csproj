@@ -121,6 +121,7 @@
     <Compile Include="SuperAdmin\ListHealthAgency\AddHealthAgency.xaml.cs">
       <DependentUpon>AddHealthAgency.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuperAdmin\ListHealthAgency\CreateHealthAgency\CreateHealthAgencyController.cs" />
     <Compile Include="SuperAdmin\ListHealthAgency\CreateHealthAgency\CreateHealthAgencyPage.xaml.cs">
       <DependentUpon>CreateHealthAgencyPage.xaml</DependentUpon>
     </Compile>
