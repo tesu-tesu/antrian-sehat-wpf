@@ -57,27 +57,21 @@ namespace TestWPPL
             listHealthAgencyPage.callMethod("fetchDataHealthAgency");
             add_ha_btn.Visibility = Visibility.Visible;
             Console.WriteLine(add_ha_btn.Content);
-            add_user_btn.Visibility = Visibility.Hidden;
         }
 
         private void listUserBtnClick(object sender, RoutedEventArgs e)
         {
+            FrameService.mainPage = listUserPage;
             mainFrame.Navigate(listUserPage);
             listUserPage.callMethod("fetchDataUser");
 
-            add_user_btn.Visibility = Visibility.Visible;
+           
             add_ha_btn.Visibility = Visibility.Hidden;
         }
 
         void addHA_OnClick(object sender, RoutedEventArgs e)
         {
             mainFrame.Navigate(createHealthAgencyPage);
-        }
-
-        void addUser_OnClick(object sender, RoutedEventArgs e)
-        {
-            mainFrame.Navigate(createUserPage);
-            createUserPage.callMethod("fetchDataHealthAgency");
         }
     }
 }

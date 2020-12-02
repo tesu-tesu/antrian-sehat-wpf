@@ -9,18 +9,33 @@
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="CreateUserPage">
 
-    <Grid  Background="#FFF5FAFD">
-        <TextBlock HorizontalAlignment="Left" Margin="422,67,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="422,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="name"/>
+    <Grid Background="White">
+        <TextBlock HorizontalAlignment="Left" Margin="422,67,0,0" Text="Name" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="422,88,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="name"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="422,129,0,0" Text="Email" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="422,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="email"/>
-        <TextBlock HorizontalAlignment="Left" Margin="422,191,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="422,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="phone"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="422,409,0,0" VerticalAlignment="Top" Click="btAddUser"/>
-        <TextBlock HorizontalAlignment="Left" Margin="422,255,0,0" Text="Nomor KTP" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="422,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="residence_number"/>
-        <TextBlock HorizontalAlignment="Left" Margin="422,322,0,0" Text="Puskesmas" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
-        <ComboBox Name="health_agency_cbx" IsTextSearchEnabled="True" HorizontalAlignment="Left" Margin="422,343,0,0" VerticalAlignment="Top" Width="120" />
+        <TextBlock HorizontalAlignment="Left" Margin="422,129,0,0" Text="Email" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="422,150,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="email"/>
+        
+        <TextBlock HorizontalAlignment="Left" Margin="422,191,0,0" Text="Nomor HP" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="422,212,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="phone"/>
+       
+        <TextBlock HorizontalAlignment="Left" Margin="422,255,0,0" Text="Nomor KTP" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="422,276,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="residence_number"/>
+        
+        <TextBlock HorizontalAlignment="Left" Margin="422,322,0,0" Text="Puskesmas" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
+        <ComboBox Name="health_agency_cbx" IsTextSearchEnabled="True" 
+                  HorizontalAlignment="Left" Margin="422,343,0,0" VerticalAlignment="Top" Width="120" />
+
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="441,409,0,0" 
+                VerticalAlignment="Top" Click="store"/>
     </Grid>
 </basic:MyPage>

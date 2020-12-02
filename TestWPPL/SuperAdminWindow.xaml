@@ -34,14 +34,6 @@
                 </StackPanel>
             </Button.Content>
         </Button>
-        <Button Name="add_user_btn" ToolTip="Add User" Visibility="Hidden" FontSize="13" Height="35" Click="addUser_OnClick" Background="WhiteSmoke" Margin="995,0,30,20" VerticalAlignment="Center" HorizontalAlignment="Right">
-            <Button.Content>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="{materialDesign:PackIcon Plus}"/>
-                    <Label Content="{materialDesign:PackIcon User}"/>
-                </StackPanel>
-            </Button.Content>
-        </Button>
         
         <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="122" Margin="8,14,0,0">
             <Canvas.Background>
