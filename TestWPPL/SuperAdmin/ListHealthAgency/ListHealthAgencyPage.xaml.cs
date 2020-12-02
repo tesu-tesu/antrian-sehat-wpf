@@ -30,7 +30,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         {
             InitializeComponent();
             this.KeepAlive = true;
-            setController(new HealthAgencyController(this));
+            setController(new ListHealthAgencyController(this));
             initUIBuilders();
             initUIElements();
         }
@@ -65,7 +65,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
             Button button = sender as Button;
             getController().callMethod("editProcess", button);
 
-            dgHealthAgencies.ItemsSource = new List<HealthAgency>();
+            //dgHealthAgencies.ItemsSource = new List<HealthAgency>();
             //navigate ke halaman edit dgn mengirimkan id HA
 
         }
@@ -75,7 +75,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
             Button button = sender as Button;
             getController().callMethod("deleteProcess", button);
 
-            dgHealthAgencies.ItemsSource = new List<HealthAgency>();
+            //dgHealthAgencies.ItemsSource = new List<HealthAgency>();
             //dgHealthAgencies.ItemsSource = itemlist baru
         }
 

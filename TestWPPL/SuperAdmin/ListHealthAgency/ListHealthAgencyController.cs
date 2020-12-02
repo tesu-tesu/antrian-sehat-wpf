@@ -5,14 +5,16 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency;
+using TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency;
 using Velacro.Api;
 using Velacro.Basic;
 
 namespace TestWPPL.SuperAdmin.ListHealthAgency
 {
-    class HealthAgencyController : MyController
+    class ListHealthAgencyController : MyController
     {
-        public HealthAgencyController(IMyView _myView) : base(_myView)
+        public ListHealthAgencyController(IMyView _myView) : base(_myView)
         {
 
         }
@@ -56,8 +58,11 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         public void editProcess(Button btn)
         {
             HealthAgency dataObject = btn.DataContext as HealthAgency;
-
             Console.WriteLine("index: " + dataObject.id);
+
+            EditHealthAgencyPage editPage = new EditHealthAgencyPage();
+            editPage.idHA = dataObject.id;
+            //FrameService.Frame.Navigate(editPage);
         }
 
     }

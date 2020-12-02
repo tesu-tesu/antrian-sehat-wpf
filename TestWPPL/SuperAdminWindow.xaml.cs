@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using TestWPPL.Login;
 using TestWPPL.Service;
 using TestWPPL.SuperAdmin.ListHealthAgency;
+using TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency;
 using TestWPPL.SuperAdmin.ListUserModul;
 using TestWPPL.SuperAdmin.ListUserModul.CreateUser;
 using Velacro.Api;
@@ -28,6 +29,8 @@ namespace TestWPPL
     {
         private MyPage listUserPage;
         private MyPage listHealthAgencyPage;
+        private MyPage createUserPage;
+        private MyPage createHealthAgencyPage;
 
         public SuperAdminWindow()
         {
@@ -35,6 +38,8 @@ namespace TestWPPL
             FrameService.frame = mainFrame;
             listUserPage = new ListUserPage();
             listHealthAgencyPage = new ListHealthAgencyPage();
+            createUserPage = new CreateUserPage();
+            createHealthAgencyPage = new CreateHealthAgencyPage();
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)
@@ -66,7 +71,7 @@ namespace TestWPPL
 
         void addHA_OnClick(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("add HA");
+            mainFrame.Navigate(createHealthAgencyPage);
         }
     }
 }

@@ -18,7 +18,7 @@
                 <DataGridTextColumn Header="Name" Binding="{Binding name}" />
                 <DataGridTextColumn Header="Phone" Binding="{Binding phone}" />
                 <DataGridTextColumn Header="Health Agency" Binding="{Binding health_agency_id}" />
- 
+
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -49,9 +49,8 @@
                     <Setter Property="VerticalAlignment" Value="Center"/>
                 </Style>
             </DataGrid.Resources>
-            
+
         </DataGrid>
-        
         <Button Name="add_user_btn" ToolTip="Add User" FontSize="13" Height="35" Click="addUser" 
                 Background="WhiteSmoke"  VerticalAlignment="Top" HorizontalAlignment="Right" 
                 Margin="0,0,10,10" >
