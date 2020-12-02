@@ -9,7 +9,7 @@
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="CreateUserPage">
 
-    <Grid Background="White">
+    <Grid  Background="#FFF5FAFD">
         <TextBlock HorizontalAlignment="Left" Margin="422,67,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="422,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="name"/>
 
