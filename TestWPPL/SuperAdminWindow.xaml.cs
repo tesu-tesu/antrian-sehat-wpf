@@ -61,7 +61,6 @@ namespace TestWPPL
 
         private void listUserBtnClick(object sender, RoutedEventArgs e)
         {
-            FrameService.mainPage = listUserPage;
             mainFrame.Navigate(listUserPage);
             listUserPage.callMethod("fetchDataUser");
 

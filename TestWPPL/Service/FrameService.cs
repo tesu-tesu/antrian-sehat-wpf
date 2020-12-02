@@ -11,6 +11,5 @@ namespace TestWPPL.Service
     class FrameService
     {
         public static Frame frame { get; set; }
-        public static MyPage mainPage { get; set; }
     }
 }
