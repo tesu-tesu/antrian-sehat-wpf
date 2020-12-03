@@ -48,4 +48,11 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         public string message { get; set; }
         public List<HealthAgency> data { get; set; }
     }
+
+    public class RootSingleHealthAgency
+    {
+        public bool success { get; set; }
+        public string message { get; set; }
+        public HealthAgency data { get; set; }
+    }
 }

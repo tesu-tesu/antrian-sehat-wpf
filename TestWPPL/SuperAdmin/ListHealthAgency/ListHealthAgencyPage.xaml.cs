@@ -60,6 +60,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
             {
                 healthAgencies = paginationHA.data;
                 Console.WriteLine("length: " + healthAgencies.LongCount());
+                dgHealthAgencies.ItemsSource = null;
                 dgHealthAgencies.ItemsSource = healthAgencies;
             });
         }
