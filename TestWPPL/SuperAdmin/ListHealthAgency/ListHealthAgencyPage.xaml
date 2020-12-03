@@ -10,8 +10,8 @@
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="ListHealthAgencyPage">
 
-    <Grid Margin="8">
-        <DataGrid IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgHealthAgencies" AutoGenerateColumns="False">
+    <Grid Margin="4">
+        <DataGrid Margin="0,50,0,0" IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgHealthAgencies" AutoGenerateColumns="False">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
@@ -49,6 +49,17 @@
             </DataGrid.Resources>
 
         </DataGrid>
+
+        <Button Name="add_ha_btn" ToolTip="Add Health Agency" FontSize="13" Height="35" Click="addHA" 
+                Background="WhiteSmoke"  VerticalAlignment="Top" HorizontalAlignment="Right" 
+                Margin="0,0,10,10" >
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="{materialDesign:PackIcon Hospital}"/>
+                    <Label Content="{materialDesign:PackIcon Building}"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
 
     </Grid>
 

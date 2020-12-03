@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestWPPL.Service;
+using TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.DataGrid;
 
@@ -25,11 +27,13 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         private BuilderDataGrid builderDataGrid;
         private IMyDataGrid dataGridHA;
         List<HealthAgency> healthAgencies;
+        private MyPage createHAPage;
 
         public ListHealthAgencyPage()
         {
             InitializeComponent();
             this.KeepAlive = true;
+            createHAPage = new CreateHealthAgencyPage();
             setController(new ListHealthAgencyController(this));
             initUIBuilders();
             initUIElements();
@@ -79,5 +83,11 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
             //dgHealthAgencies.ItemsSource = itemlist baru
         }
 
+        void addHA(object sender, RoutedEventArgs e)
+        {
+            FrameService.frame.Navigate(createHAPage);
+        }
     }
+
 }
+
