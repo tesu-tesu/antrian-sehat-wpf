@@ -26,15 +26,6 @@
         <Button Name="health_agency_btn" Content="List Health&#xD;&#xA;Agency" FontSize="12" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Center" Width="99" Height="41" FontFamily="Poppins" FontWeight="Normal"  Click="listHealthAgencyBtnClick"/>
         <Button Name="logout_btn" Foreground="Red" Content="Logout" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30"  Click="logoutBtnClick"/>
 
-        <Button Name="add_ha_btn" ToolTip="Add Health Agency" Visibility="Hidden" FontSize="12" Height="35" Click="addHA_OnClick" Background="WhiteSmoke" Margin="995,0,30,20" VerticalAlignment="Center"  HorizontalAlignment="Right">
-            <Button.Content>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="{materialDesign:PackIcon Hospital}"/>
-                    <Label Content="{materialDesign:PackIcon Building}"/>
-                </StackPanel>
-            </Button.Content>
-        </Button>
-        
         <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="122" Margin="8,14,0,0">
             <Canvas.Background>
                 <ImageBrush ImageSource="navbar logo.png"/>

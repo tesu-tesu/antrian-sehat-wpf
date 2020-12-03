@@ -10,14 +10,18 @@
       Title="CreateHealthAgencyPage">
 
     <Grid Background="#FFF5FAFD">
-        <TextBlock Margin="524,120,444,410" Text="Name" TextWrapping="Wrap" VerticalAlignment="Center" Opacity="0.5" HorizontalAlignment="Center" Height="20"/>
-        <TextBox Height="30" Margin="479,140,401,380" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Name="name_txt" HorizontalAlignment="Center"/>
-        <TextBlock Margin="524,183,445,345" Text="Email" TextWrapping="Wrap" VerticalAlignment="Center" Opacity="0.5" HorizontalAlignment="Center" Height="22" Width="31"/>
-        <TextBox Height="30" Margin="480,205,400,315" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Name="email_txt" HorizontalAlignment="Center"/>
-        <TextBlock Margin="523,254,431,274" Text="Address" TextWrapping="Wrap" VerticalAlignment="Center" Opacity="0.5" HorizontalAlignment="Center" Height="22" Width="46"/>
-        <TextBox Height="30" Margin="445,276,365,244" TextWrapping="Wrap" VerticalAlignment="Center" Width="190" x:Name="address_txt" HorizontalAlignment="Center"/>
-        <TextBlock Margin="510,318,429,213" Text="Call center" TextWrapping="Wrap" VerticalAlignment="Center" Opacity="0.5" HorizontalAlignment="Center" Height="19"/>
-        <TextBox Height="29" Margin="480,340,400,181" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Name="call_center_txt" HorizontalAlignment="Center"/>
-        <Button Name="addHA_btn" Content="Submit" Margin="510,410,414,105" VerticalAlignment="Center" Click="btAddHA" HorizontalAlignment="Center" Height="35"/>
+        <TextBlock Margin="422,67,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="20"/>
+        <TextBox Height="30" Margin="422,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Name="name_txt" HorizontalAlignment="Left"/>
+
+        <TextBlock Margin="422,129,0,0" Text="Email" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="22" Width="31"/>
+        <TextBox Height="30" Margin="422,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="email_txt" HorizontalAlignment="Left"/>
+
+        <TextBlock Margin="422,191,0,0" Text="Call center" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="19"/>
+        <TextBox Height="29" Margin="422,206,0,0" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="call_center_txt" HorizontalAlignment="Left"/>
+
+        <TextBlock Margin="422,255,0,0" Text="Address" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="22" Width="46"/>
+        <TextBox Height="30" Margin="422,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" x:Name="address_txt" HorizontalAlignment="Left"/>
+
+        <Button Name="addHA_btn" Content="Submit" Margin="441,340,0,0" VerticalAlignment="Top" Click="btAddHA" HorizontalAlignment="Left" Height="35"/>
     </Grid>
 </basic:MyPage>

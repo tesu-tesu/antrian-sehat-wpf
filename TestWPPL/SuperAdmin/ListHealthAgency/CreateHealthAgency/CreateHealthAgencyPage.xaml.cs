@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -66,9 +67,65 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency
             getController().callMethod("storeHealthAgencyData",
                 name_txt.Text, email_txt.Text, address_txt.Text, call_center_txt.Text);
         }
-        public void cek()
+
+        public void successStore(HealthAgency healthAgency)
         {
-            Console.WriteLine("ada");
+            this.Dispatcher.Invoke(() =>
+            {
+                this.NavigationService.GoBack();
+                this.NavigationService.RemoveBackEntry();
+
+                nameTxtBox.setText("");
+                emailTxtBox.setText("");
+                addressTxtBox.setText("");
+                callCenterTxtBox.setText("");
+
+                MessageBox.Show(
+                    "Nama : " + healthAgency.name + Environment.NewLine +
+                    "Email : " + healthAgency.email + Environment.NewLine +
+                    "Call center : " + healthAgency.call_center + Environment.NewLine +
+                    "Alamat : " + healthAgency.address + Environment.NewLine 
+                    );
+            });
+        }
+
+        public void setErrorStore(string errorMessage)
+        {
+            JObject messageJSon = JObject.Parse(errorMessage);
+            String emailError = "";
+            String nameError = "";
+            String addressError = "";
+            String callCenterError = "";
+            String allError = "";
+
+            if (messageJSon["email"] != null)
+            {
+                emailError += messageJSon["email"][0].ToString();
+                allError += emailError + Environment.NewLine;
+            }
+            if (messageJSon["name"] != null)
+            {
+                nameError += messageJSon["name"][0].ToString();
+                allError += nameError + Environment.NewLine;
+            }
+            if (messageJSon["address"] != null)
+            {
+                addressError += messageJSon["address"][0].ToString();
+                allError += addressError + Environment.NewLine;
+            }
+            if (messageJSon["call_center"] != null)
+            {
+                callCenterError += messageJSon["call_center"][0].ToString();
+                allError += callCenterError + Environment.NewLine;
+            }
+
+            this.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(
+                    "Error : " + allError + Environment.NewLine 
+                    );
+            });
+
         }
     }
 }

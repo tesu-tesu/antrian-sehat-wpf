@@ -29,8 +29,6 @@ namespace TestWPPL
     {
         private MyPage listUserPage;
         private MyPage listHealthAgencyPage;
-        private MyPage createUserPage;
-        private MyPage createHealthAgencyPage;
 
         public SuperAdminWindow()
         {
@@ -38,8 +36,6 @@ namespace TestWPPL
             FrameService.frame = mainFrame;
             listUserPage = new ListUserPage();
             listHealthAgencyPage = new ListHealthAgencyPage();
-            createUserPage = new CreateUserPage();
-            createHealthAgencyPage = new CreateHealthAgencyPage();
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)
@@ -55,22 +51,12 @@ namespace TestWPPL
         {
             mainFrame.Navigate(listHealthAgencyPage);
             listHealthAgencyPage.callMethod("fetchDataHealthAgency");
-            add_ha_btn.Visibility = Visibility.Visible;
-            Console.WriteLine(add_ha_btn.Content);
         }
 
         private void listUserBtnClick(object sender, RoutedEventArgs e)
         {
             mainFrame.Navigate(listUserPage);
             listUserPage.callMethod("fetchDataUser");
-
-           
-            add_ha_btn.Visibility = Visibility.Hidden;
-        }
-
-        void addHA_OnClick(object sender, RoutedEventArgs e)
-        {
-            mainFrame.Navigate(createHealthAgencyPage);
         }
     }
 }
