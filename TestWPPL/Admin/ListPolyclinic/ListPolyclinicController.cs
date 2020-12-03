@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Velacro.Api;
 using Velacro.Basic;
 
@@ -23,7 +24,7 @@ namespace TestWPPL.Admin.ListPolyclinic
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/health-agency/1/polyclinic")
+                .setEndpoint("admin/health-agency/"+ Application.Current.Resources["ha_id"] + "/polyclinic")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetch);
             client.setOnFailedRequest(setViewErrorFetch);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Velacro.Api;
 using Velacro.Basic;
 
@@ -42,7 +43,10 @@ namespace TestWPPL.Login {
         //method yg dijalankan saat request success harus memiliki parameter bertipe HttpResponseBundle
         private void setViewSuccessLogin(HttpResponseBundle _response){
             if (_response.getHttpResponseMessage().Content != null) {
-                Console.WriteLine("role: " + _response.getJObject()["user"]["role"]);
+                Console.WriteLine("role: " + _response.getJObject()["user"]);
+                Application.Current.Resources["email"] = _response.getJObject()["user"]["email"];
+                Application.Current.Resources["name"] = _response.getJObject()["user"]["name"];
+                Application.Current.Resources["ha_id"] = _response.getJObject()["user"]["health_agency_id"];
                 String role = _response.getJObject()["user"]["role"].ToString();
                 client.setAuthorizationToken(_response.getJObject()["access_token"].ToString());
 
