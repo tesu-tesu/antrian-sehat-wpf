@@ -16,6 +16,7 @@ using Velacro.UIElements.Basic;
 using TestWPPL.Login;
 using TestWPPL.Admin.ListPolyclinic;
 using Velacro.Api;
+using System.IO;
 
 namespace TestWPPL
 {
@@ -38,7 +39,7 @@ namespace TestWPPL
         {
             ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
             client.clearAuthorizationToken();
-
+            File.Delete("../../assets/file/user.txt");
             new LoginPage().Show();
             this.Close();
         }

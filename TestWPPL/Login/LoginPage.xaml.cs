@@ -1,8 +1,11 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.IO;
 using System.Net.Http;
+using System.Windows;
 using System.Windows.Controls;
 using TestWPPL.Register;
+using Velacro.Api;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.PasswordBox;
@@ -21,12 +24,31 @@ namespace TestWPPL.Login {
         private IMyPasswordBox passwordTxtBox;
         //private IMyTextBlock loginStatusTxtBlock;
         private IMyTextBlock emailTxtBlock, passTxtBlock;
+        private ApiClient client;
 
         public LoginPage() {
             InitializeComponent();
             setController(new LoginController(this));
             initUIBuilders();
             initUIElements();
+            checkAuth();
+        }
+
+        private void checkAuth()
+        {
+            client = ApiAntrianSehat.getInstance().GetApiClient();
+            String path = System.AppDomain.CurrentDomain.BaseDirectory + "../../assets/file/user.txt";
+            if (File.Exists(path))
+            {
+                String strFile = File.ReadAllText("../../assets/file/user.txt");
+                string[] userFile = strFile.Split(' ');
+                
+                Application.Current.Resources["email"] = userFile[0];
+                Application.Current.Resources["ha_id"] = userFile[3];
+                client.setAuthorizationToken(userFile[1]);
+
+                redirectBasedOnRole(userFile[2]);
+            }
         }
 
         private void initUIBuilders(){
@@ -59,12 +81,17 @@ namespace TestWPPL.Login {
                 emailTxtBlock.setText("");
                 passTxtBlock.setText("");
 
-                if (role == "Admin")
-                    new AdminWindow().Show();
-                else if (role == "Super Admin")
-                    new SuperAdminWindow().Show();
-                this.Close();
+                redirectBasedOnRole(role);
             });
+        }
+
+        private void redirectBasedOnRole(String role)
+        {
+            if (role == "Admin")
+                new AdminWindow().Show();
+            else if (role == "Super Admin")
+                new SuperAdminWindow().Show();
+            this.Close();
         }
 
         public void restrictNoAuthentication(string _status)
