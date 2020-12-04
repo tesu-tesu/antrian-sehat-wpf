@@ -45,6 +45,32 @@ namespace TestWPPL.SuperAdmin
         {
             Console.WriteLine("err: " + _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result);
         }
+
+        public async void deleteUser(User user)
+        {
+            ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
+            var request = new ApiRequestBuilder();
+
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint("user/" + user.id)
+                .setRequestMethod(HttpMethod.Delete);
+            client.setOnSuccessRequest(setViewSuccessDelete);
+            client.setOnFailedRequest(setViewErrorDelete);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
+        private void setViewErrorDelete(HttpResponseBundle _response)
+        {
+            Console.WriteLine("err: " + _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result);
+        }
+
+        private void setViewSuccessDelete(HttpResponseBundle _response)
+        {
+            Console.WriteLine("sukses: " + _response.getJObject());
+
+            getView().callMethod("setSuccessDelete", "Sukses menghapus User");
+        }
     }
 
 }
