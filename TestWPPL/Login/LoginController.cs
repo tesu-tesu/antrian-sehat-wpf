@@ -49,12 +49,12 @@ namespace TestWPPL.Login {
                 Application.Current.Resources["ha_id"] = _response.getJObject()["user"]["health_agency_id"];
                 String role = _response.getJObject()["user"]["role"].ToString();
 
-                String saveStr = _response.getJObject()["user"]["email"] + " "
-                                + _response.getJObject()["access_token"].ToString() + " "
-                                + _response.getJObject()["user"]["role"] + " "
+                String saveStr = _response.getJObject()["user"]["email"] + ","
+                                + _response.getJObject()["access_token"].ToString() + ","
+                                + _response.getJObject()["user"]["role"] + ","
                                 + _response.getJObject()["user"]["health_agency_id"];
 
-                TextOperation.writeToFile("../../assets/file/user.txt", saveStr);
+                TextOperation.writeToFile("../../assets/user.txt", saveStr);
                 client.setAuthorizationToken(_response.getJObject()["access_token"].ToString());
 
                 string status = _response.getHttpResponseMessage().ReasonPhrase;
