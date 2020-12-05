@@ -43,7 +43,7 @@ namespace TestWPPL
         {
             ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
             client.clearAuthorizationToken();
-            File.Delete("../../assets/file/user.txt");
+            File.Delete("../../assets/user.txt");
             new LoginPage().Show();
             this.Close();
         }
