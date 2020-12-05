@@ -35,7 +35,8 @@ namespace TestWPPL.SuperAdmin.ListUserModul.EditUser
 
         private void setViewErrorFetchUser(HttpResponseBundle _response)
         {
-            Console.WriteLine("err: " + _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result);
+            Console.WriteLine("err: " + _response.getHttpResponseMessage()
+                .Content.ReadAsStringAsync().Result);
         }
 
         private void setViewSuccessFetchUser(HttpResponseBundle _response)

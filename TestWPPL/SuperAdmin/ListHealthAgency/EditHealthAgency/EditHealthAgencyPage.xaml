@@ -22,6 +22,6 @@
         <TextBlock Margin="422,255,0,0" Text="Address" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="22" Width="46"/>
         <TextBox Height="30" Margin="422,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" x:Name="address_txt" HorizontalAlignment="Left"/>
 
-        <Button Name="updateHA_btn" Content="Update" Margin="441,340,0,0" VerticalAlignment="Top" Click="btUpdateHA" HorizontalAlignment="Left" Height="35"/>
+        <Button Name="updateHA_btn" Content="Update" Margin="441,340,0,0" VerticalAlignment="Top" Click="btnUpdateHA" HorizontalAlignment="Left" Height="35"/>
     </Grid>
 </basic:MyPage>

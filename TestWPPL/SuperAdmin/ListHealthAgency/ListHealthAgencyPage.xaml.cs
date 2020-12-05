@@ -53,6 +53,15 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         {
             getController().callMethod("fetchDataHealthAgency");
         }
+        
+        public void setSuccessDelete(string message)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(message, "Success");
+                fetchDataHealthAgency();
+            });
+        }
 
         public void setListView(Pagination paginationHA)
         {

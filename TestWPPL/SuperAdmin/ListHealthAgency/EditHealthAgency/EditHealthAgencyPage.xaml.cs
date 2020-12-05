@@ -36,11 +36,18 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
         {
             InitializeComponent();
             initUIElements();
+            this.KeepAlive = true;
+            setController(new EditHAController(this));
+        }
+
+        public void fetchHAData()
+        {
+            getController().callMethod("fetchHAData", idHA);
         }
         
         private void initUIElements()
         {
-            updateButton = buttonBuilder.activate(this, "addHA_btn");
+            updateButton = buttonBuilder.activate(this, "updateHA_btn");
             nameTxtBox = txtBoxBuilder.activate(this, "name_txt");
             emailTxtBox = txtBoxBuilder.activate(this, "email_txt");
             addressTxtBox = txtBoxBuilder.activate(this, "address_txt");
@@ -53,11 +60,32 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-
-        private void btUpdateHA(object sender, RoutedEventArgs e)
+        
+        public void setUserData(User user)
         {
-            getController().callMethod("storeHealthAgencyData",
-                name_txt.Text, email_txt.Text, address_txt.Text, call_center_txt.Text);
+            this.Dispatcher.Invoke(() =>
+            {
+                name_txt.Text = user.name;
+                email_txt.Text = user.email;
+                call_center_txt.Text = user.phone;
+                address_txt.Text = user.residence_number;
+            });
+        }
+
+        private void btnUpdateHA(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("UPDATE");
+            /*getController().callMethod("storeHealthAgencyData",
+                name_txt.Text, email_txt.Text, address_txt.Text, call_center_txt.Text);*/
+
+            if (name_txt.Text == ""
+                || call_center_txt.Text == ""
+                || address_txt.Text == ""
+                )
+            {
+                MessageBox.Show("Nama, Call Center, Alamat harus diisi");
+            }
+            
         }
         
         public void successStore(HealthAgency healthAgency)
@@ -67,10 +95,12 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
                 this.NavigationService.GoBack();
                 this.NavigationService.RemoveBackEntry();
 
+                /*
                 nameTxtBox.setText("");
                 emailTxtBox.setText("");
                 addressTxtBox.setText("");
                 callCenterTxtBox.setText("");
+                */
 
                 MessageBox.Show(
                     "Nama : " + healthAgency.name + Environment.NewLine +
