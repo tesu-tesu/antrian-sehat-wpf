@@ -37,7 +37,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
             InitializeComponent();
             initUIElements();
             this.KeepAlive = true;
-            setController(new EditHAController(this));
+            setController(new EditHealthAgencyController(this));
         }
 
         public void fetchHAData()

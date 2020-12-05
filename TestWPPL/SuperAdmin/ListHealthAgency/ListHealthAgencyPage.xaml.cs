@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestWPPL.Service;
 using TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency;
+using TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.DataGrid;
 
@@ -28,7 +29,8 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         private IMyDataGrid dataGridHA;
         List<HealthAgency> healthAgencies;
         private MyPage createHAPage;
-
+        private MyPage editHealthAgencyPage;
+        
         public ListHealthAgencyPage()
         {
             InitializeComponent();
@@ -77,11 +79,15 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         void edit_OnClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            getController().callMethod("editProcess", button);
-
+            HealthAgency dataObject = button.DataContext as HealthAgency;
+            getController().callMethod("editProcess", dataObject.id);
+            
             //dgHealthAgencies.ItemsSource = new List<HealthAgency>();
             //navigate ke halaman edit dgn mengirimkan id HA
-
+            FrameService.frame.Navigate(editHealthAgencyPage);
+            ((EditHealthAgencyPage)editHealthAgencyPage).idHA = dataObject.id;
+            
+            editHealthAgencyPage.callMethod("fetchHAData");
         }
 
         void delete_OnClick(object sender, RoutedEventArgs e)

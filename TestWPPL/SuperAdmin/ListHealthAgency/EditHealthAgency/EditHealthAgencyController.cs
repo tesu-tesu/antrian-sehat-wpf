@@ -5,15 +5,15 @@ using Velacro.Basic;
 
 namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
 {
-    public class EditHAController : MyController
+    public class EditHealthAgencyController : MyController
     {
         private ApiClient client;
-        public EditHAController CreateInstance(IMyView _myView)
+        public EditHealthAgencyController CreateInstance(IMyView _myView)
         {
-            return new EditHAController(_myView);
+            return new EditHealthAgencyController(_myView);
         }
 
-        public EditHAController(IMyView _myView) : base(_myView)
+        public EditHealthAgencyController(IMyView _myView) : base(_myView)
         {
         }
         
