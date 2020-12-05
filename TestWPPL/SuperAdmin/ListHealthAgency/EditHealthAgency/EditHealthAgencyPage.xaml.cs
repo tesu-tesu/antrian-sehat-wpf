@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json.Linq;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBox;
@@ -35,8 +36,9 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
         public EditHealthAgencyPage()
         {
             InitializeComponent();
-            initUIElements();
             this.KeepAlive = true;
+            initUIElements();
+            initUIBuilders();
             setController(new EditHealthAgencyController(this));
         }
 
@@ -44,6 +46,13 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
         {
             getController().callMethod("fetchHAData", idHA);
         }
+        
+        private void initUIBuilders()
+        {
+            buttonBuilder = new BuilderButton();
+            txtBoxBuilder = new BuilderTextBox();
+        }
+        
         
         private void initUIElements()
         {
@@ -85,6 +94,10 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
             {
                 MessageBox.Show("Nama, Call Center, Alamat harus diisi");
             }
+            else
+            {
+                getController().callMethod("updateHA", idHA, name_txt.Text, email_txt.Text, call_center_txt.Text);
+            }
             
         }
         
@@ -111,5 +124,43 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
             });
         }
         
+        public void setErrorStore(string errorMessage)
+        {
+            JObject messageJSon = JObject.Parse(errorMessage);
+            String emailError = "";
+            String nameError = "";
+            String addressError = "";
+            String callCenterError = "";
+            String allError = "";
+
+            if (messageJSon["email"] != null)
+            {
+                emailError += messageJSon["email"][0].ToString();
+                allError += emailError + Environment.NewLine;
+            }
+            if (messageJSon["name"] != null)
+            {
+                nameError += messageJSon["name"][0].ToString();
+                allError += nameError + Environment.NewLine;
+            }
+            if (messageJSon["address"] != null)
+            {
+                addressError += messageJSon["address"][0].ToString();
+                allError += addressError + Environment.NewLine;
+            }
+            if (messageJSon["call_center"] != null)
+            {
+                callCenterError += messageJSon["call_center"][0].ToString();
+                allError += callCenterError + Environment.NewLine;
+            }
+
+            this.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(
+                    "Error : " + allError + Environment.NewLine 
+                );
+            });
+
+        }
     }
 }
