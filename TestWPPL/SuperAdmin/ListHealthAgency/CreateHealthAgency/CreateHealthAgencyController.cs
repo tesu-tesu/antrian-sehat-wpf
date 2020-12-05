@@ -11,7 +11,12 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency
 {
     class CreateHealthAgencyController : MyController
     {
-        public CreateHealthAgencyController(IMyView _myView) : base(_myView)
+        public static CreateHealthAgencyController CreateInstance(IMyView _myView)
+        {
+            return new CreateHealthAgencyController(_myView);
+        }
+
+        private CreateHealthAgencyController(IMyView _myView) : base(_myView)
         {
         }
 
