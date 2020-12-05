@@ -37,16 +37,17 @@ namespace TestWPPL.Login {
         private void checkAuth()
         {
             client = ApiAntrianSehat.getInstance().GetApiClient();
-            String path = System.AppDomain.CurrentDomain.BaseDirectory + "../../assets/file/user.txt";
+            String path = System.AppDomain.CurrentDomain.BaseDirectory + "../../assets/user.txt";
             if (File.Exists(path))
             {
-                String strFile = File.ReadAllText("../../assets/file/user.txt");
-                string[] userFile = strFile.Split(' ');
+                String strFile = File.ReadAllText("../../assets/user.txt");
+                string[] userFile = strFile.Split(',');
                 
                 Application.Current.Resources["email"] = userFile[0];
-                Application.Current.Resources["ha_id"] = userFile[3];
+                if(userFile[3] != null)
+                    Application.Current.Resources["ha_id"] = userFile[3];
                 client.setAuthorizationToken(userFile[1]);
-
+                Console.WriteLine(userFile[2]);
                 redirectBasedOnRole(userFile[2]);
             }
         }

@@ -135,6 +135,10 @@
     <Compile Include="SuperAdmin\ListUserModul\CreateUser\CreateUserPage.xaml.cs">
       <DependentUpon>CreateUserPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuperAdmin\ListUserModul\EditUser\EditUserController.cs" />
+    <Compile Include="SuperAdmin\ListUserModul\EditUser\EditUserPage.xaml.cs">
+      <DependentUpon>EditUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SuperAdmin\ListUserModul\ListUserController.cs" />
     <Compile Include="Dashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
@@ -198,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SuperAdmin\ListUserModul\CreateUser\CreateUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuperAdmin\ListUserModul\EditUser\EditUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

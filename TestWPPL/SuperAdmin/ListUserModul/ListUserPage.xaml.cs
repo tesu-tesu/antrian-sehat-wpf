@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestWPPL.Service;
 using TestWPPL.SuperAdmin.ListUserModul.CreateUser;
+using TestWPPL.SuperAdmin.ListUserModul.EditUser;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.DataGrid;
 using Velacro.UIElements.ListBox;
@@ -28,12 +29,14 @@ namespace TestWPPL.SuperAdmin.ListUserModul
         private BuilderDataGrid builderDataGrid;
         private IMyDataGrid dataGridUser;
         private MyPage createUserPage;
+        private MyPage editUserPage;
 
         public ListUserPage()
         {
             InitializeComponent();
             this.KeepAlive = true;
             createUserPage = new CreateUserPage();
+            editUserPage = new EditUserPage();
             setController(new ListUserController(this));
             initUIBuilders();
             initUIElements();
@@ -58,7 +61,7 @@ namespace TestWPPL.SuperAdmin.ListUserModul
         {
             this.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine("length: " + users.LongCount());
+                //Console.WriteLine("length: " + users.LongCount());
                 dgUsers.ItemsSource = users;
                 //dataGridUser.setItemsSource<User>((Velacro.Basic.MyList<User>)users);
             });
@@ -67,12 +70,18 @@ namespace TestWPPL.SuperAdmin.ListUserModul
         void edit_OnClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            Console.WriteLine("Edit action");
+            User dataObject = button.DataContext as User;
+            //Console.WriteLine("index: " + dataObject.id);
+            FrameService.frame.Navigate(editUserPage);
+            ((EditUserPage)editUserPage).userId = dataObject.id;
+
+            editUserPage.callMethod("fetchUserData");
         }
 
         void delete_OnClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
+            getController().callMethod("deleteUser", button.DataContext as User);
             Console.WriteLine("Delete action");
         }
 
@@ -80,6 +89,15 @@ namespace TestWPPL.SuperAdmin.ListUserModul
         {
             FrameService.frame.Navigate(createUserPage);
             createUserPage.callMethod("fetchDataHealthAgency");
+        }
+
+        public void setSuccessDelete(string message)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(message, "Success");
+                fetchDataUser();
+            });
         }
     }
 }
