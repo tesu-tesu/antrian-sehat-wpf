@@ -80,7 +80,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         {
             Button button = sender as Button;
             HealthAgency dataObject = button.DataContext as HealthAgency;
-            getController().callMethod("editProcess", dataObject.id);
+            //getController().callMethod("editProcess", dataObject.id);
             
             //dgHealthAgencies.ItemsSource = new List<HealthAgency>();
             //navigate ke halaman edit dgn mengirimkan id HA
@@ -94,7 +94,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         {
             Button button = sender as Button;
             getController().callMethod("deleteProcess", button.DataContext as HealthAgency);
-
+            Console.WriteLine("Delete action");
             //dgHealthAgencies.ItemsSource = new List<HealthAgency>();
             //dgHealthAgencies.ItemsSource = itemlist baru
         }

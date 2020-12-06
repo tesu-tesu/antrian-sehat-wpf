@@ -54,16 +54,16 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
             var request = new ApiRequestBuilder();
 
             var req = request.buildHttpRequest()
-                .setEndpoint("health-agency/" + healthAgency.id)
+                .setEndpoint("admin/health-agency/" + healthAgency.id)
                 .setRequestMethod(HttpMethod.Delete);
             client.setOnSuccessRequest(setViewSuccessDelete);
             client.setOnFailedRequest(setViewErrorDelete);
 
         }
 
-        private void setViewErrorDelete(HttpResponseBundle obj)
+        private void setViewErrorDelete(HttpResponseBundle _response)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("err: " + _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result);
         }
 
         private void setViewSuccessDelete(HttpResponseBundle obj)
