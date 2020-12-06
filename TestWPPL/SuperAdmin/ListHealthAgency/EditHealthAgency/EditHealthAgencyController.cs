@@ -40,7 +40,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
         private void setViewSuccessFetchHA(HttpResponseBundle _response)
         {
             HealthAgency healthAgency = _response.getParsedObject<RootSingleHealthAgency>().data;
-            getView().callMethod("setHAData");
+            getView().callMethod("setHAData", healthAgency);
         }
 
         public async void updateHA(int id, String name, String email, String address, String call_center)

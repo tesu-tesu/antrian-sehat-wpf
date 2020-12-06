@@ -93,7 +93,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         void delete_OnClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            getController().callMethod("deleteProcess", button);
+            getController().callMethod("deleteProcess", button.DataContext as HealthAgency);
 
             //dgHealthAgencies.ItemsSource = new List<HealthAgency>();
             //dgHealthAgencies.ItemsSource = itemlist baru
