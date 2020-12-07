@@ -30,7 +30,14 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
         private IMyButton updateButton;
         private IMyTextBox nameTxtBox, emailTxtBox, addressTxtBox, callCenterTxtBox;
 
-        
+        public TextBox NameTxt
+        {
+            get => name_txt;
+            set => name_txt = value;
+        }
+
+        public string EmailTxt { get; }
+
         public int idHA { get; set; }
 
         public EditHealthAgencyPage()
@@ -70,14 +77,14 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
             e.Handled = regex.IsMatch(e.Text);
         }
         
-        public void setUserData(User user)
+        public void setHAData(HealthAgency user)
         {
             this.Dispatcher.Invoke(() =>
             {
                 name_txt.Text = user.name;
                 email_txt.Text = user.email;
-                call_center_txt.Text = user.phone;
-                address_txt.Text = user.residence_number;
+                call_center_txt.Text = user.call_center;
+                address_txt.Text = user.address;
             });
         }
 

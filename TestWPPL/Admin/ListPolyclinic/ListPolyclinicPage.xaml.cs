@@ -69,5 +69,10 @@ namespace TestWPPL.Admin.ListPolyclinic
             Button button = sender as Button;
             Console.WriteLine("Delete action");
         }
+
+        public void Connect(int connectionId, object target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

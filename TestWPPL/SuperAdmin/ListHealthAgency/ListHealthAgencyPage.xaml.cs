@@ -36,6 +36,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
             InitializeComponent();
             this.KeepAlive = true;
             createHAPage = new CreateHealthAgencyPage();
+            editHealthAgencyPage = new EditHealthAgencyPage();
             setController(new ListHealthAgencyController(this));
             initUIBuilders();
             initUIElements();
@@ -79,14 +80,17 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
         void edit_OnClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            HealthAgency dataObject = button.DataContext as HealthAgency;
-            //getController().callMethod("editProcess", dataObject.id);
+            if (button != null)
+            {
+                HealthAgency dataObject = button.DataContext as HealthAgency;
+                //getController().callMethod("editProcess", dataObject.id);
             
-            //dgHealthAgencies.ItemsSource = new List<HealthAgency>();
-            //navigate ke halaman edit dgn mengirimkan id HA
-            FrameService.frame.Navigate(editHealthAgencyPage);
-            ((EditHealthAgencyPage)editHealthAgencyPage).idHA = dataObject.id;
-            
+                //dgHealthAgencies.ItemsSource = new List<HealthAgency>();
+                //navigate ke halaman edit dgn mengirimkan id HA
+                FrameService.frame.Navigate(editHealthAgencyPage);
+                ((EditHealthAgencyPage)editHealthAgencyPage).idHA = dataObject.id;
+            }
+
             editHealthAgencyPage.callMethod("fetchHAData");
         }
 
