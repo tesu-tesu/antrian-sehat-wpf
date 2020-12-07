@@ -44,8 +44,8 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
         {
             InitializeComponent();
             this.KeepAlive = true;
-            initUIElements();
             initUIBuilders();
+            initUIElements();
             setController(new EditHealthAgencyController(this));
         }
 
