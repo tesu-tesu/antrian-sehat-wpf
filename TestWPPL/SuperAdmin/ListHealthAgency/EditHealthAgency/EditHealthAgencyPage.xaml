@@ -9,7 +9,19 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditHealthAgencyPage">
 
-    <Grid>
-        
+    <Grid Background="#FFF5FAFD">
+        <TextBlock Margin="422,67,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="20"/>
+        <TextBox Height="30" Margin="422,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Name="name_txt" HorizontalAlignment="Left"/>
+
+        <TextBlock Margin="422,129,0,0" Text="Email" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="22" Width="31"/>
+        <TextBox Height="30" Margin="422,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="email_txt" HorizontalAlignment="Left"/>
+
+        <TextBlock Margin="422,191,0,0" Text="Call center" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="19"/>
+        <TextBox Height="29" Margin="422,206,0,0" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="call_center_txt" HorizontalAlignment="Left"/>
+
+        <TextBlock Margin="422,255,0,0" Text="Address" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="22" Width="46"/>
+        <TextBox Height="30" Margin="422,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" x:Name="address_txt" HorizontalAlignment="Left"/>
+
+        <Button Name="updateHA_btn" Content="Update" Margin="441,340,0,0" VerticalAlignment="Top" Click="btnUpdateHA" HorizontalAlignment="Left" Height="35"/>
     </Grid>
 </basic:MyPage>

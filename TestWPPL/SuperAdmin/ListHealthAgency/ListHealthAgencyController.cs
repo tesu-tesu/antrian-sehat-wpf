@@ -47,15 +47,31 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
             getView().callMethod("setListView", healthAgencyPagination);
         }
 
-        public void deleteProcess(Button btn)
+        public async void deleteProcess(HealthAgency healthAgency)
         {
-            HealthAgency dataObject = btn.DataContext as HealthAgency;
+            
+            ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
+            var request = new ApiRequestBuilder();
 
-            Console.WriteLine("index: " + dataObject.id);
-
+            var req = request.buildHttpRequest()
+                .setEndpoint("admin/health-agency/" + healthAgency.id)
+                .setRequestMethod(HttpMethod.Delete);
+            client.setOnSuccessRequest(setViewSuccessDelete);
+            client.setOnFailedRequest(setViewErrorDelete);
+            var response = await client.sendRequest(request.getApiRequestBundle());
         }
 
-        public void editProcess(Button btn)
+        private void setViewErrorDelete(HttpResponseBundle _response)
+        {
+            Console.WriteLine("err: " + _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result);
+        }
+
+        private void setViewSuccessDelete(HttpResponseBundle obj)
+        {
+            getView().callMethod("setSuccessDelete", "Sukses menghapus Health Agency");
+        }
+
+        public async void editProcess(Button btn)
         {
             HealthAgency dataObject = btn.DataContext as HealthAgency;
             Console.WriteLine("index: " + dataObject.id);
