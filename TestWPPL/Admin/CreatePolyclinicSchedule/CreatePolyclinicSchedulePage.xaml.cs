@@ -112,6 +112,9 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
             string name = (sender as CheckBox).Name.ToString();
             Schedule schedule = getValueTimePickers();
 
+            if (schedule == null)
+                return;
+
             if (name.Equals("Senin_Cb"))
                 schedule.setDay("Senin");
             else if (name.Equals("Selasa_Cb"))
@@ -133,12 +136,19 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
         Schedule getValueTimePickers()
         {
             String timeOpen, timeClose;
-            DateTime selectedTime;
+            DateTime selectedTimeOpen, selectedTimeClose;
 
-            selectedTime = TimeOpen_Tp.SelectedTime.Value;
-            timeOpen = selectedTime.ToString("HH:mm");
-            selectedTime = TimeClose_Tp.SelectedTime.Value;
-            timeClose = selectedTime.ToString("HH:mm");
+            selectedTimeOpen = TimeOpen_Tp.SelectedTime.Value;
+            selectedTimeClose = TimeClose_Tp.SelectedTime.Value;
+
+            if (selectedTimeOpen != null && selectedTimeClose != null) {
+                ErrorSchedule_txt.Text = "";
+                timeOpen = selectedTimeOpen.ToString("HH:mm");
+                timeClose = selectedTimeClose.ToString("HH:mm");
+            } else {
+                ErrorSchedule_txt.Text = "Anda harus memilih waktu buka dan tutup terlebih dahulu";
+                return null;
+            }
 
             return new Schedule(timeOpen, timeClose);
         }
