@@ -33,6 +33,7 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
         private IMyButton saveSchedule_bt;
         private IMyTextBlock errorCreateSchedule_txt;
         private IMyTextBlock successCreatePolyclinic_txt;
+        private int createdPoly = 0;
         private int polyclinicId = -1;
         private string polyName;
 
@@ -71,6 +72,8 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
                 ErrorSchedule_txt.Text = "Mohon buat Poli terlebih dahulu";
                 return;
             }
+            ErrorSchedule_txt.Text = "";
+            createdPoly = 0;
             getController().callMethod("SaveAllSchedules", polyclinicId, schedules);
         }
 
@@ -80,7 +83,6 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
             polyName = polyMaster.name;
             int selectedPoly = (int) PolyMaster_CombB.SelectedValue;
             getController().callMethod("CreatePolyclinic", selectedPoly);
-
         }
 
         public void setSuccessCreatePolyclinic(Polyclinic polyclinic)
@@ -100,11 +102,32 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
         {
             this.Dispatcher.Invoke(() =>
             {
+                createdPoly++;
+
+                if (createdPoly == schedules.Count)
+                {
+                    Console.WriteLine(createdPoly + " " + schedules.Count);
+                    MessageBoxResult result = MessageBox.Show(
+                        "Berhasil membuat semua jadwal untuk poli " + polyName, "Success");
+                    if(result == MessageBoxResult.OK)
+                        clearAllConfig();
+                        
+                    return;
+                }
+                Console.WriteLine(createdPoly + " " + schedules.Count);
                 Console.WriteLine("Sukses membuat jadwal di hari " + schedule.day + " " + schedule.timeOpen + "-" + schedule.timeClose);
-                String prev = ErrorSchedule_txt.Text;
-                prev += "Sukses membuat jadwal di hari " + schedule.day + "\n";
-                ErrorSchedule_txt.Text = prev;
             });
+        }
+
+        private void clearAllConfig()
+        {
+            polyclinicId = -1;
+            polyName = "";
+            createdPoly = 0;
+            schedules = new Dictionary<string, Schedule>();
+            ErrorSchedule_txt.Text = "";
+            SuccessPoly_txt.Text = "";
+            SaveSchedule_bt.IsEnabled = false;
         }
 
         void Checked_Handler(object sender, RoutedEventArgs e)
@@ -112,8 +135,10 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
             string name = (sender as CheckBox).Name.ToString();
             Schedule schedule = getValueTimePickers();
 
-            if (schedule == null)
+            if (schedule == null) {
+                (sender as CheckBox).IsChecked = false;
                 return;
+            }
 
             if (name.Equals("Senin_Cb"))
                 schedule.setDay("Senin");
@@ -131,20 +156,23 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
                 schedule.setDay("Minggu");
 
             schedules.Add(schedule.getDay(), schedule);
+            setTimePicker();
+        }
+
+        private void setTimePicker()
+        {
+            TimeClose_Tp.SelectedTime = null;
+            TimeOpen_Tp.SelectedTime = null;
         }
 
         Schedule getValueTimePickers()
         {
             String timeOpen, timeClose;
-            DateTime selectedTimeOpen, selectedTimeClose;
 
-            selectedTimeOpen = TimeOpen_Tp.SelectedTime.Value;
-            selectedTimeClose = TimeClose_Tp.SelectedTime.Value;
-
-            if (selectedTimeOpen != null && selectedTimeClose != null) {
+            if (TimeOpen_Tp.SelectedTime != null && TimeClose_Tp.SelectedTime != null) {
                 ErrorSchedule_txt.Text = "";
-                timeOpen = selectedTimeOpen.ToString("HH:mm");
-                timeClose = selectedTimeClose.ToString("HH:mm");
+                timeOpen = TimeOpen_Tp.SelectedTime.Value.ToString("HH:mm");
+                timeClose = TimeClose_Tp.SelectedTime.Value.ToString("HH:mm");
             } else {
                 ErrorSchedule_txt.Text = "Anda harus memilih waktu buka dan tutup terlebih dahulu";
                 return null;
