@@ -103,7 +103,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
             }
             else
             {
-                getController().callMethod("updateHA", idHA, name_txt.Text, email_txt.Text, call_center_txt.Text);
+                getController().callMethod("updateHA", idHA, name_txt.Text, email_txt.Text, address_txt.Text, call_center_txt.Text);
             }
             
         }

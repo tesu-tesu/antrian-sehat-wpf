@@ -47,7 +47,7 @@ namespace TestWPPL.Login {
                 if(userFile[3] != null)
                     Application.Current.Resources["ha_id"] = userFile[3];
                 client.setAuthorizationToken(userFile[1]);
-                Console.WriteLine(userFile[2]);
+                
                 redirectBasedOnRole(userFile[2]);
             }
         }
