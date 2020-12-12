@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Velacro.Api;
 using Velacro.Basic;
 
@@ -50,11 +51,11 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
         public async void CreatePolyclinic(int _polyMasterId)
         {
             var request = new ApiRequestBuilder();
-            
+            Console.WriteLine("ha_id", Application.Current.Resources["ha_id"]);
             var req = request
                 .buildHttpRequest()
                 .addParameters("poly_master_id", _polyMasterId.ToString())
-                .addParameters("health_agency_id", "1")
+                .addParameters("health_agency_id", (string)Application.Current.Resources["ha_id"])
                 .setEndpoint("admin/polyclinic/")
                 .setRequestMethod(HttpMethod.Post);
             client.setOnSuccessRequest(setSuccessCreatePolyclinic);
