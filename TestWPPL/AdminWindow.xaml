@@ -8,28 +8,43 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="640" Width="1120">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="230*"/>
-            <RowDefinition Height="379*"/>
-        </Grid.RowDefinitions>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF31BF9F" Offset="0.004"/>
-                <GradientStop Color="#FFE4FDF7" Offset="0.451"/>
-                <GradientStop Color="#FF6DD3CE" Offset="0.089"/>
-                <GradientStop Color="#FFB4FBFB" Offset="0.238"/>
-                <GradientStop Color="#FFD6F7F0" Offset="0.664"/>
-                <GradientStop Color="#FFBDFFE1" Offset="0.902"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="120,86,0,0" Grid.RowSpan="2"/>
-        <Button Name="list_poly_btn" Content="List Polyclinic" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" Margin="10,172,0,0" VerticalAlignment="Center" Width="99" Height="38" Click="listPolyclinicBtnClick"/>
-        <Button Name="manage_poly_btn" Content="Manage&#xD;&#xA;Polyclinic" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" Margin="10,34,0,0" VerticalAlignment="Center" Width="99" Height="39" Click="managePolyclinicBtnClick" />
-        <Button Name="logout_btn" Content="Logout" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30" Click="logoutBtnClick"/>
-        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="122" Margin="8,14,0,0">
-            <Canvas.Background>
-                <ImageBrush ImageSource="navbar logo.png"/>
-            </Canvas.Background>
-        </Canvas>
+        <DockPanel HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="973" Margin="146,0,0,0" Grid.RowSpan="2" LastChildFill="False">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#3a97c1" Offset="0.004"/>
+                    <GradientStop Color="#30a9ad" Offset="0.451"/>
+                    <GradientStop Color="#27b79d" Offset="0.9"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+
+        </DockPanel>
+
+        <DockPanel HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="973" Margin="146,300,0,0" Grid.RowSpan="2" Background="White" LastChildFill="False">
+
+        </DockPanel>
+
+        <DockPanel HorizontalAlignment="Left" Height="609" VerticalAlignment="Top" Width="147" Grid.RowSpan="2" Background="White" LastChildFill="False">
+            <Canvas Height="51" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="15,15,15,0">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="ANTRIANsehat.png"/>
+                </Canvas.Background>
+            </Canvas>
+            <Button Name="list_poly_btn" Margin="0,50,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="listPolyclinicBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="assets/images/clinic.png" Width="10" Height="12" Margin="0,0,7,0"/>
+                    <TextBlock Foreground="#3C3C3C"><Run Foreground="#3C3C3C" Text="Poliklinik"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="manage_poly_btn" Margin="0,10,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="listPolyclinicBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="assets/images/list.png" Width="10" Height="12" Margin="0,0,7,0"/>
+                    <TextBlock Foreground="#3C3C3C"><Run Foreground="#3C3C3C" Text="Manage Poly"/></TextBlock>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="250,130,104,130" Grid.RowSpan="2" UseLayoutRounding="True"/>
+        <Button Name="logout_btn" Content="Logout" Foreground="white" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30" Click="logoutBtnClick" Background="{x:Null}" BorderBrush="{x:Null}"/>
+
     </Grid>
 </basic:MyWindow>
