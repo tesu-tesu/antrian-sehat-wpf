@@ -6,9 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWPPL"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="640" Width="1120">
+        Title="AdminWindow" Height="720" Width="1320">
     <Grid>
-        <DockPanel HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="973" Margin="146,0,0,0" Grid.RowSpan="2" LastChildFill="False">
+        <DockPanel HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Top" Margin="156,0,0,0" LastChildFill="False">
             <DockPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#3a97c1" Offset="0.004"/>
@@ -16,34 +16,29 @@
                     <GradientStop Color="#27b79d" Offset="0.9"/>
                 </LinearGradientBrush>
             </DockPanel.Background>
-
         </DockPanel>
 
-        <DockPanel HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="973" Margin="146,300,0,0" Grid.RowSpan="2" Background="White" LastChildFill="False">
-
-        </DockPanel>
-
-        <DockPanel HorizontalAlignment="Left" Height="609" VerticalAlignment="Top" Width="147" Grid.RowSpan="2" Background="White" LastChildFill="False">
-            <Canvas Height="51" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="15,15,15,0">
+        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Stretch" Grid.RowSpan="2" Background="White" LastChildFill="False">
+            <Canvas Height="51" VerticalAlignment="Center" DockPanel.Dock="Top" Margin="10,15,10,0">
                 <Canvas.Background>
                     <ImageBrush ImageSource="ANTRIANsehat.png"/>
                 </Canvas.Background>
             </Canvas>
             <Button Name="list_poly_btn" Margin="0,50,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="listPolyclinicBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="assets/images/clinic.png" Width="10" Height="12" Margin="0,0,7,0"/>
+                    <Image Source="assets/images/clinic.png" Width="20" Height="14" Margin="0,0,7,0"/>
                     <TextBlock Foreground="#3C3C3C"><Run Foreground="#3C3C3C" Text="Poliklinik"/></TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="manage_poly_btn" Margin="0,10,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="listPolyclinicBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
+            <Button Name="manage_poly_btn" Margin="0,10,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="managePolyclinicBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="assets/images/list.png" Width="10" Height="12" Margin="0,0,7,0"/>
+                    <Image Source="assets/images/list.png" Width="20" Height="14" Margin="0,0,8,0"/>
                     <TextBlock Foreground="#3C3C3C"><Run Foreground="#3C3C3C" Text="Manage Poly"/></TextBlock>
                 </StackPanel>
             </Button>
         </DockPanel>
 
-        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="250,130,104,130" Grid.RowSpan="2" UseLayoutRounding="True"/>
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="230,120,60,100" Grid.RowSpan="2" UseLayoutRounding="True"/>
         <Button Name="logout_btn" Content="Logout" Foreground="white" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30" Click="logoutBtnClick" Background="{x:Null}" BorderBrush="{x:Null}"/>
 
     </Grid>
