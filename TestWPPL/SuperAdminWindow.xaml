@@ -1,35 +1,45 @@
-﻿<basic:MyWindow  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
-                 x:Class="TestWPPL.SuperAdminWindow"
+﻿<basic:MyWindow  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro" 
+                 x:Class="TestWPPL.AdminWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TestWPPL" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                 mc:Ignorable="d"
-        Title="SuperAdminWindow" Height="640" Width="1120">
+        xmlns:local="clr-namespace:TestWPPL"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="720" Width="1320">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="240"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF31BF9F" Offset="0.004"/>
-                <GradientStop Color="#FFF4FFFC" Offset="0.451"/>
-                <GradientStop Color="#FF6DD3CE" Offset="0.089"/>
-                <GradientStop Color="#FFD5FFFF" Offset="0.238"/>
-                <GradientStop Color="#FFF2FDF8" Offset="0.902"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="120,86,0,0" Grid.RowSpan="2"/>
-        <Button Name="user_btn" Content="List User" HorizontalAlignment="Left" FontSize="12" HorizontalContentAlignment="Center"  Margin="10,172,0,0" VerticalAlignment="Center" Width="99" Height="38" FontFamily="Poppins" FontWeight="Normal"  Click="listUserBtnClick"/>
-        <Button Name="health_agency_btn" Content="List Health&#xD;&#xA;Agency" FontSize="12" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Center" Width="99" Height="41" FontFamily="Poppins" FontWeight="Normal"  Click="listHealthAgencyBtnClick"/>
-        <Button Name="logout_btn" Foreground="Red" Content="Logout" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30"  Click="logoutBtnClick"/>
+        <DockPanel HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Top" Margin="156,0,0,0" LastChildFill="False">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#3a97c1" Offset="0.004"/>
+                    <GradientStop Color="#30a9ad" Offset="0.451"/>
+                    <GradientStop Color="#27b79d" Offset="0.9"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+        </DockPanel>
 
-        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="122" Margin="8,14,0,0">
-            <Canvas.Background>
-                <ImageBrush ImageSource="navbar logo.png"/>
-            </Canvas.Background>
-        </Canvas>
+        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Stretch" Grid.RowSpan="2" Background="White" LastChildFill="False">
+            <Canvas Height="51" VerticalAlignment="Center" DockPanel.Dock="Top" Margin="10,15,10,0">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="ANTRIANsehat.png"/>
+                </Canvas.Background>
+            </Canvas>
+            <Button Name="health_agency_btn" Margin="0,50,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="listHealthAgencyBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="assets/images/clinic.png" Width="20" Height="14" Margin="0,0,7,0"/>
+                    <TextBlock Foreground="#3C3C3C"><Run Foreground="#3C3C3C" Text="List Health Agency"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="user_btn" Margin="0,10,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="listUserBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="assets/images/list.png" Width="20" Height="14" Margin="0,0,8,0"/>
+                    <TextBlock Foreground="#3C3C3C"><Run Foreground="#3C3C3C" Text="List User"/></TextBlock>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Background="#FFF5FAFD" Margin="230,120,60,100" Grid.RowSpan="2" UseLayoutRounding="True"/>
+        <Button Name="logout_btn" Content="Logout" Foreground="white" HorizontalAlignment="Right" Margin="995,28,10,0" VerticalAlignment="Top" Height="30" Click="logoutBtnClick" Background="{x:Null}" BorderBrush="{x:Null}"/>
+
     </Grid>
 </basic:MyWindow>
