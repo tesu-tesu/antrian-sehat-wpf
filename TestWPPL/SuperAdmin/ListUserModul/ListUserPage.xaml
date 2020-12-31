@@ -17,7 +17,7 @@
 
                 <DataGridTextColumn Header="Name" Binding="{Binding name}" />
                 <DataGridTextColumn Header="Phone" Binding="{Binding phone}" />
-                <DataGridTextColumn Header="Health Agency" Binding="{Binding health_agency_id}" />
+                <DataGridTextColumn Header="Health Agency" Binding="{Binding health_agency.name}" />
 
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
