@@ -31,13 +31,13 @@
             </Canvas>
             <Button Name="list_poly_btn" Margin="0,50,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="listPolyclinicBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="assets/images/clinic.png" Width="10" Height="12" Margin="0,0,7,0"/>
+                    <Image Source="pack://application:,,,/assets/images/clinic.png" Width="10" Height="12" Margin="0,0,7,0"/>
                     <TextBlock Foreground="#3C3C3C"><Run Foreground="#3C3C3C" Text="Poliklinik"/></TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="manage_poly_btn" Margin="0,10,0,0" HorizontalAlignment="Left" FontFamily="Poppins" FontSize="10" DockPanel.Dock="Top" Width="147" Height="41" Click="listPolyclinicBtnClick" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.495,-0.237" HorizontalContentAlignment="Left">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="assets/images/list.png" Width="10" Height="12" Margin="0,0,7,0"/>
+                    <Image Source="pack://application:,,,/assets/images/list.png" Width="10" Height="12" Margin="0,0,7,0"/>
                     <TextBlock Foreground="#3C3C3C"><Run Foreground="#3C3C3C" Text="Manage Poly"/></TextBlock>
                 </StackPanel>
             </Button>
