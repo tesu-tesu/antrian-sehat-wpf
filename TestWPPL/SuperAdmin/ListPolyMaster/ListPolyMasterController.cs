@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Net.Http;
+using System.Windows.Controls;
 using TestWPPL.Admin.CreatePolyclinicSchedule;
 using TestWPPL.SuperAdmin.ListHealthAgency;
+using TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency;
 using Velacro.Basic;
 using Velacro.Api;
 
@@ -62,6 +64,16 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
         private void setViewSuccessDelete(HttpResponseBundle obj)
         {
             getView().callMethod("setSuccessDelete", "Sukses menghapus Poly Master");
+        }
+        
+        public async void editProcess(Button btn)
+        {
+            HealthAgency dataObject = btn.DataContext as HealthAgency;
+            Console.WriteLine("index: " + dataObject.id);
+
+            EditHealthAgencyPage editPage = new EditHealthAgencyPage();
+            editPage.idHA = dataObject.id;
+            //FrameService.Frame.Navigate(editPage);
         }
     }
 }

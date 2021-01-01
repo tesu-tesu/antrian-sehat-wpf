@@ -131,6 +131,14 @@
     <Compile Include="SuperAdmin\ListHealthAgency\ListHealthAgencyPage.xaml.cs">
       <DependentUpon>ListHealthAgencyPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuperAdmin\ListPolyMaster\CreatePolyMaster\CreatePolyMasterPage.xaml.cs">
+      <DependentUpon>CreatePolyMasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin\ListPolyMaster\CreatePolyMaster\CreatePolyMasterController.cs" />
+    <Compile Include="SuperAdmin\ListPolyMaster\EditPolyMaster\EditPolyMasterController.cs" />
+    <Compile Include="SuperAdmin\ListPolyMaster\EditPolyMaster\EditPolyMasterPage.xaml.cs">
+      <DependentUpon>EditPolyMasterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SuperAdmin\ListPolyMaster\ListPolyMasterPage.xaml.cs">
       <DependentUpon>ListPolyMasterPage.xaml</DependentUpon>
     </Compile>
@@ -206,6 +214,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SuperAdmin\ListPolyMaster\CreatePolyMaster\CreatePolyMasterPage.xaml" />
+    <Page Include="SuperAdmin\ListPolyMaster\EditPolyMaster\EditPolyMasterPage.xaml" />
     <Page Include="SuperAdmin\ListPolyMaster\ListPolyMasterPage.xaml" />
     <Page Include="SuperAdmin\ListUserModul\CreateUser\CreateUserPage.xaml">
       <SubType>Designer</SubType>
@@ -258,10 +268,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="navbar logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SuperAdmin\ListPolyMaster\CreatePolyMaster" />
-    <Folder Include="SuperAdmin\ListPolyMaster\EditPolyMaster" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\images\ANTRIANsehat.png" />
