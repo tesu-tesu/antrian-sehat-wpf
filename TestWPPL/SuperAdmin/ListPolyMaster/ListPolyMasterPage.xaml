@@ -9,9 +9,50 @@
       mc:Ignorable="d"
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="ListPolyMasterPage">
-    <Grid Margin="8">
-        <DataGrid IsReadOnly="True">
-            
+    <Grid Margin="4">
+        <DataGrid Margin="0,50,0,0" IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgHealthAgencies" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nama Master Poli" Binding="{Binding name}" Width = "700" MinWidth="300"/>
+
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button ToolTip="Edit" Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Edit}"/>
+                                <Button ToolTip="Delete" Name="button_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Trash}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="FontFamily" Value="Poppins"/>
+                    <Setter Property="Width" Value="auto"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                </Style>
+                <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}" >
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.Resources>
+
         </DataGrid>
+
+        <Button Name="add_polymaster_btn" ToolTip="Tambah Master Poli" FontSize="13" Height="35" Click="addPolyMaster" 
+                Background="WhiteSmoke"  VerticalAlignment="Top" HorizontalAlignment="Right" 
+                Margin="0,0,10,10" >
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="{materialDesign:PackIcon Hospital}"/>
+                    <Label Content="{materialDesign:PackIcon Building}"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
     </Grid>
 </basic:MyPage>
