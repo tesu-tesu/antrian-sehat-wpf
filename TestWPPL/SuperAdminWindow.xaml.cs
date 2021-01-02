@@ -16,6 +16,7 @@ using TestWPPL.Login;
 using TestWPPL.Service;
 using TestWPPL.SuperAdmin.ListHealthAgency;
 using TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency;
+using TestWPPL.SuperAdmin.ListPolyMaster;
 using TestWPPL.SuperAdmin.ListUserModul;
 using TestWPPL.SuperAdmin.ListUserModul.CreateUser;
 using Velacro.Api;
@@ -30,6 +31,7 @@ namespace TestWPPL
     {
         private MyPage listUserPage;
         private MyPage listHealthAgencyPage;
+        private MyPage listPolyMasterPage;
 
         public SuperAdminWindow()
         {
@@ -37,6 +39,7 @@ namespace TestWPPL
             FrameService.frame = mainFrame;
             listUserPage = new ListUserPage();
             listHealthAgencyPage = new ListHealthAgencyPage();
+            listPolyMasterPage = new ListPolyMasterPage();
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)
@@ -58,6 +61,12 @@ namespace TestWPPL
         {
             mainFrame.Navigate(listUserPage);
             listUserPage.callMethod("fetchDataUser");
+        }
+
+        private void listPolyMasterBtnClick(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(listPolyMasterPage);
+            listPolyMasterPage.callMethod("fetchDataPolyMaster");
         }
     }
 }

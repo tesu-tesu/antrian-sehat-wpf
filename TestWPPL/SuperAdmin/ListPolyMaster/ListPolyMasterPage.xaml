@@ -10,7 +10,7 @@
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="ListPolyMasterPage">
     <Grid Margin="4">
-        <DataGrid Margin="0,50,0,0" IsReadOnly="true" HorizontalContentAlignment="Center" Name="dgHealthAgencies" AutoGenerateColumns="False">
+        <DataGrid Margin="0,50,0,0" IsReadOnly="true" HorizontalContentAlignment="Center" Name="DgPolyMaster" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nama Master Poli" Binding="{Binding name}" Width = "700" MinWidth="300"/>
 
@@ -19,7 +19,7 @@
                         <DataTemplate>
                             <StackPanel>
                                 <Button ToolTip="Edit" Name="edit_btn" Grid.Column="1" Click="edit_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Edit}"/>
-                                <Button ToolTip="Delete" Name="button_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Trash}"/>
+                                <Button ToolTip="Delete" Name="delete_btn" Grid.Column="1" Click="delete_OnClick" Background="WhiteSmoke" Content="{materialDesign:PackIcon Trash}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
