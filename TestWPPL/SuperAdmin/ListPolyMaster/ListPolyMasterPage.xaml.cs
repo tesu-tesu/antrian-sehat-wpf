@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using TestWPPL.Admin.CreatePolyclinicSchedule;
+using TestWPPL.Service;
+using TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster;
 using TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster;
 using TestWPPL.SuperAdmin.ListUserModul.CreateUser;
 using Velacro.UIElements.Basic;
@@ -21,7 +23,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
         {
             InitializeComponent();
             this.KeepAlive = true;
-            createPolyMasterPage = new CreateUserPage();
+            createPolyMasterPage = new CreatePolyMasterPage();
             editPolyMasterPage = new EditPolyMasterPage();
             setController(new ListPolyMasterController(this));
             initUIBuilders();
@@ -50,7 +52,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
 
         private void addPolyMaster(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            FrameService.frame.Navigate(createPolyMasterPage);
         }
         
         public void fetchDataPolyMaster()

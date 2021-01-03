@@ -131,10 +131,10 @@
     <Compile Include="SuperAdmin\ListHealthAgency\ListHealthAgencyPage.xaml.cs">
       <DependentUpon>ListHealthAgencyPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuperAdmin\ListPolyMaster\CreatePolyMaster\CreatePolyMasterController.cs" />
     <Compile Include="SuperAdmin\ListPolyMaster\CreatePolyMaster\CreatePolyMasterPage.xaml.cs">
       <DependentUpon>CreatePolyMasterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SuperAdmin\ListPolyMaster\CreatePolyMaster\CreatePolyMasterController.cs" />
     <Compile Include="SuperAdmin\ListPolyMaster\EditPolyMaster\EditPolyMasterController.cs" />
     <Compile Include="SuperAdmin\ListPolyMaster\EditPolyMaster\EditPolyMasterPage.xaml.cs">
       <DependentUpon>EditPolyMasterPage.xaml</DependentUpon>
