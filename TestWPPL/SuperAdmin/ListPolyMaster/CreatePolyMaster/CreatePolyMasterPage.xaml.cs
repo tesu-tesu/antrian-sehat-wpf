@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using Newtonsoft.Json.Linq;
+using TestWPPL.Admin.ListPolyclinic;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBox;
@@ -38,6 +41,44 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         {
             getController().callMethod("storePolyMasterData",
                 name_txt.Text);
+        }
+        
+        public void successStore(PolyMaster polyMaster)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                this.NavigationService.GoBack();
+                this.NavigationService.RemoveBackEntry();
+
+                nameTxtBox.setText("");
+
+                MessageBox.Show(
+                    "Nama : " + polyMaster.name + Environment.NewLine
+                );
+            });
+        }
+        
+        public void setErrorStore(string errorMessage)
+        {
+            JObject messageJSon = JObject.Parse(errorMessage);
+            
+            String nameError = "";
+            String allError = "";
+            
+            if (messageJSon["name"] != null)
+            {
+                nameError += messageJSon["name"][0].ToString();
+                allError += nameError + Environment.NewLine;
+            }
+           
+
+            this.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(
+                    "Error : " + allError + Environment.NewLine 
+                );
+            });
+
         }
     }
 }
