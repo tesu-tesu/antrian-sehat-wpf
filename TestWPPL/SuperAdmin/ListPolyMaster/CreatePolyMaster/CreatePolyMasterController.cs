@@ -13,12 +13,12 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         {
         }
         
-        public CreatePolyMasterController CreateInstance(IMyView _myView)
+        public static CreatePolyMasterController CreateInstance(IMyView _myView)
         {
             return new CreatePolyMasterController(_myView);
         }
         
-        public async void storePolyMasterData(String name, String email, String address, String callCenter)
+        public async void storePolyMasterData(String name)
         {
 
             ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
