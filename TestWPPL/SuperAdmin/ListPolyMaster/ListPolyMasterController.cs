@@ -18,7 +18,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
             
         }
         
-        public async void fetchPolyMasterData(int idPolyMaster)
+        public async void fetchDataPolyMaster(int idPolyMaster)
         {
             client = ApiAntrianSehat.getInstance().GetApiClient();
             var request = new ApiRequestBuilder();
