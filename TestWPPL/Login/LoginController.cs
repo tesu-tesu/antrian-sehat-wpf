@@ -38,7 +38,7 @@ namespace TestWPPL.Login {
         private void setViewErrorLogin(HttpResponseBundle _response)
         {
             string message = _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result;
-            Console.WriteLine("error: " + _response.getJObject());
+            //Console.WriteLine("error: " + _response.getJObject());
             getView().callMethod("setErrorLogin", message);
         }
 

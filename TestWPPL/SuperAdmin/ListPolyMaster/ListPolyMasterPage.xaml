@@ -34,7 +34,7 @@
                     <Setter Property="BorderBrush" Value="Black"/>
                     <Setter Property="FontFamily" Value="Poppins"/>
                     <Setter Property="Width" Value="auto"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 </Style>
                 <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}" >
                     <Setter Property="HorizontalAlignment" Value="Center"/>
