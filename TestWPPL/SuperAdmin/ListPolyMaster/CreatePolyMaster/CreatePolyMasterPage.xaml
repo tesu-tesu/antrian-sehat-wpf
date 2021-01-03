@@ -1,12 +1,18 @@
-﻿<UserControl x:Class="TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster.CreatePolyMaster"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster"
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+﻿<basic:MyPage  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+               x:Class="TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster.CreatePolyMasterPage"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+               xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency"
+               mc:Ignorable="d" 
+               d:DesignHeight="550" d:DesignWidth="1000"
+               Title="CreatePolyMasterPage"
+>
+    <Grid Background="#FFF5FAFD">
+        <TextBlock Margin="422,67,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="20"/>
+        <TextBox Height="30" Margin="422,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Name="name_txt" HorizontalAlignment="Left"/>
         
+        <Button Name="addPolyMaster_btn" Content="Submit" Margin="441,340,0,0" VerticalAlignment="Top" Click="btAddPolyMaster" HorizontalAlignment="Left" Height="35"/>
     </Grid>
-</UserControl>
+</basic:MyPage>
