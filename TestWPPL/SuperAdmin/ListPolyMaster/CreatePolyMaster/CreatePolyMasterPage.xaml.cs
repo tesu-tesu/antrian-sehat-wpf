@@ -6,6 +6,7 @@ using TestWPPL.Admin.ListPolyclinic;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBox;
+using PolyMaster = TestWPPL.Admin.CreatePolyclinicSchedule.PolyMaster;
 
 namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
 {
