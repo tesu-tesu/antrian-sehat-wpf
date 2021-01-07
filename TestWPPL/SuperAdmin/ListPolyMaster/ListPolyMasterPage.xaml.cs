@@ -32,7 +32,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
 
         private void initUIElements()
         {
-            dataGridPolyMaster = builderDataGrid.activate(this, "DgPolyMaster");
+            dataGridPolyMaster = builderDataGrid.activate(this, "DgPolyMasters");
         }
 
         private void initUIBuilders()
@@ -47,8 +47,19 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
 
         private void delete_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            Button button = sender as Button;
+            getController().callMethod("deleteProcess", button.DataContext as PolyMaster);
         }
+        
+        public void setSuccessDelete(string message)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(message, "Success");
+                fetchDataPolyMaster();
+            });
+        }
+        
 
         private void addPolyMaster(object sender, RoutedEventArgs e)
         {
@@ -65,8 +76,8 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
             this.Dispatcher.Invoke(() =>
             {
                 polyMasters = pagination.data;
-                DgPolyMaster.ItemsSource = null;
-                DgPolyMaster.ItemsSource = polyMasters;
+                DgPolyMasters.ItemsSource = null;
+                DgPolyMasters.ItemsSource = polyMasters;
             });
         }
         

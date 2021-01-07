@@ -7,7 +7,9 @@
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       mc:Ignorable="d"
       Title="EditPolyMasterPage" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="#FFF5FAFD">
+        <TextBlock Margin="422,67,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="20"/>
+        <TextBox Height="30" Margin="422,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Name="name_txt" HorizontalAlignment="Left"/>
+        <Button Name="UpdatePolyMasterBtn" Content="Update" Margin="441,340,0,0" VerticalAlignment="Top" Click="btnUpdatePolyMaster" HorizontalAlignment="Left" Height="35"/>
     </Grid>
 </basic:MyPage>

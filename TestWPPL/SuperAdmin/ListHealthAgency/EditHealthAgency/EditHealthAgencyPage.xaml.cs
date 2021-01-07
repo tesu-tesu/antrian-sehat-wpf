@@ -77,14 +77,14 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
             e.Handled = regex.IsMatch(e.Text);
         }
         
-        public void setHAData(HealthAgency user)
+        public void setHAData(HealthAgency healthAgency)
         {
             this.Dispatcher.Invoke(() =>
             {
-                name_txt.Text = user.name;
-                email_txt.Text = user.email;
-                call_center_txt.Text = user.call_center;
-                address_txt.Text = user.address;
+                name_txt.Text = healthAgency.name;
+                email_txt.Text = healthAgency.email;
+                call_center_txt.Text = healthAgency.call_center;
+                address_txt.Text = healthAgency.address;
             });
         }
 

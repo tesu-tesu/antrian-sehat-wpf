@@ -10,7 +10,7 @@
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="ListPolyMasterPage">
     <Grid Margin="4">
-        <DataGrid Margin="0,50,0,0" IsReadOnly="true" HorizontalContentAlignment="Center" Name="DgPolyMaster" AutoGenerateColumns="False">
+        <DataGrid Margin="0,50,0,0" IsReadOnly="true" HorizontalContentAlignment="Center" Name="DgPolyMasters" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nama Master Poli" Binding="{Binding name}" Width = "700" MinWidth="300"/>
 

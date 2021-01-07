@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using TestWPPL.Admin.CreatePolyclinicSchedule;
 using TestWPPL.SuperAdmin.ListHealthAgency;
 using TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency;
+using TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster;
 using Velacro.Basic;
 using Velacro.Api;
 
@@ -68,11 +69,11 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
         
         public async void editProcess(Button btn)
         {
-            HealthAgency dataObject = btn.DataContext as HealthAgency;
+            PolyMaster dataObject = btn.DataContext as PolyMaster;
             Console.WriteLine("index: " + dataObject.id);
 
-            EditHealthAgencyPage editPage = new EditHealthAgencyPage();
-            editPage.idHA = dataObject.id;
+            EditPolyMasterPage editPage = new EditPolyMasterPage();
+            editPage.idPolyMaster = dataObject.id;
             //FrameService.Frame.Navigate(editPage);
         }
     }
