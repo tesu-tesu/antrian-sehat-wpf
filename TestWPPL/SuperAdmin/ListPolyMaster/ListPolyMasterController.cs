@@ -74,7 +74,6 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
 
             EditPolyMasterPage editPage = new EditPolyMasterPage();
             editPage.idPolyMaster = dataObject.id;
-            //FrameService.Frame.Navigate(editPage);
         }
     }
 }

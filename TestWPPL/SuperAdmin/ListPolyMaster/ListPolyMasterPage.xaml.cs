@@ -42,7 +42,15 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
 
         private void edit_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            Button button = sender as Button;
+            if (button != null)
+            {
+                var dataObject = button.DataContext as PolyMaster;
+               
+                FrameService.frame.Navigate(editPolyMasterPage);
+                ((EditPolyMasterPage)editPolyMasterPage).idPolyMaster = dataObject.id;
+            }
+            editPolyMasterPage.callMethod("fetchPolyMasterData");
         }
 
         private void delete_OnClick(object sender, RoutedEventArgs e)
