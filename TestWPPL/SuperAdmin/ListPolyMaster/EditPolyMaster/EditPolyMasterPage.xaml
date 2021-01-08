@@ -6,10 +6,13 @@
       xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster"
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       mc:Ignorable="d"
-      Title="EditPolyMasterPage" Height="450" Width="800">
-    <Grid Background="#FFF5FAFD">
-        <TextBlock Margin="422,67,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.5" HorizontalAlignment="Left" Height="20"/>
-        <TextBox Height="30" Margin="422,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Name="name_txt" HorizontalAlignment="Left"/>
-        <Button Name="UpdatePolyMasterBtn" Content="Update" Margin="441,340,0,0" VerticalAlignment="Top" Click="btnUpdatePolyMaster" HorizontalAlignment="Left" Height="35"/>
-    </Grid>
+      Title="EditPolyMasterPage" Width="617.6" Height="471.6">
+    <Border x:Name="roundBorder" BorderThickness="0" CornerRadius="20" Background="#FFF5FAFD" Margin="0,0,0,48">
+        <Grid Background="Transparent" Margin="0,0,0,49.6" MinHeight="68" MinWidth="68">
+            <TextBlock Margin="182.8,75.2,0,0" Text="Nama Poli : " TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="20" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontWeight="Bold" Grid.Row="1" FontSize="14"/>
+            <TextBox Height="30" Margin="268.35,65.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168.4" Name="name_txt" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold" Opacity="0.8"/>
+
+            <Button Name="UpdatePolyMasterBtn" Content="Update" Margin="258.75,205,0,0" VerticalAlignment="Top" Click="btnUpdatePolyMaster" HorizontalAlignment="Left" Height="35" RenderTransformOrigin="-0.497,0.614" Width="126.437"/>
+        </Grid>
+    </Border>
 </basic:MyPage>

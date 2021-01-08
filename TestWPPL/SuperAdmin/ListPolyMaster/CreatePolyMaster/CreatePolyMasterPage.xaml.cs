@@ -25,7 +25,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
             initUIBuilders();
             initUIElements();
         }
-        
+
         private void initUIBuilders()
         {
             buttonBuilder = new BuilderButton();

@@ -16,8 +16,10 @@
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Name" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding email}" />
                 <DataGridTextColumn Header="Phone" Binding="{Binding phone}" />
                 <DataGridTextColumn Header="Health Agency" Binding="{Binding health_agency.name}" />
+                <DataGridTextColumn Header="Role" Binding="{Binding role}" />
 
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
