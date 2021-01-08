@@ -43,8 +43,10 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster
 
         private void setViewSuccessFetchPolyMaster(HttpResponseBundle _response)
         {
-            PolyMaster polyMaster = _response.getParsedObject<RootSinglePolyMaster>().data;
-            getView().callMethod("setPolyMasterData", polyMaster);
+            //PolyMaster polyMaster = _response.getParsedObject<RootSinglePolyMaster>().data;
+            //getView().callMethod("setPolyMasterData", polyMaster);
+            Console.WriteLine("success: " + _response.getHttpResponseMessage()
+                .Content.ReadAsStringAsync().Result);
         }
 
         public async void updatePolyMaster(int id, String name)
@@ -70,7 +72,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster
         private void setSuccessStorePolyMaster(HttpResponseBundle _response)
         {
             string message = _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result;
-            Console.WriteLine("sukses: " + _response.getJObject());
+            //Console.WriteLine("sukses: " + _response.getJObject());
 
             PolyMaster polyMaster = _response.getParsedObject<RootSinglePolyMaster>().data;
             getView().callMethod("successStore", polyMaster);
