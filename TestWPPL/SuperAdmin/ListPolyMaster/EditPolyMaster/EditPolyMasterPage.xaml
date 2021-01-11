@@ -13,7 +13,7 @@
             <TextBox Height="30" Margin="268.35,65.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168.4" Name="name_txt" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold" Opacity="0.8"/>
 
             <Button Name="UpdatePolyMasterBtn" Content="Update" Margin="258.75,205,0,0" VerticalAlignment="Top" Click="btnUpdatePolyMaster" HorizontalAlignment="Left" Height="35" RenderTransformOrigin="-0.497,0.614" Width="126.437"/>
-            <Button x:Name="uploadImage_btn" Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,116.1,0,0" VerticalAlignment="Top" Width="80.55" Background="#FFFAFAFA" BorderBrush="#FF2E7A7A" Foreground="#FF2E7A7A"/>
+            <Button x:Name="uploadImage_btn" click="upload_btn" Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,116.1,0,0" VerticalAlignment="Top" Width="80.55" Background="#FFFAFAFA" BorderBrush="#FF2E7A7A" Foreground="#FF2E7A7A"/>
         </Grid>
     </Border>
 </basic:MyPage>

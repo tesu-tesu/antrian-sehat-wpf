@@ -16,7 +16,7 @@
             <TextBox Height="30" Margin="263.35,65.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.4" x:Name="name_txt" HorizontalAlignment="Left" FontWeight="Bold" FontSize="18" UseLayoutRounding="False" Opacity="0.84"/>
 
             <Button x:Name="addPolyMaster_btn" Content="Submit" Margin="269.55,185.143,0,0" VerticalAlignment="Top" Click="btAddPolyMaster" HorizontalAlignment="Left" Height="35" Width="106.147"/>
-            <Button x:Name="uploadImage_btn" Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,116.1,0,0" VerticalAlignment="Top" Width="80.55" Background="#FFFAFAFA" BorderBrush="#FF2E7A7A" Foreground="#FF2E7A7A"/>
+            <Button x:Name="uploadImage_btn" Content="Upload Image" click="upload_btn" HorizontalAlignment="Left" Height="31.2" Margin="182.8,116.1,0,0" VerticalAlignment="Top" Width="80.55" Background="#FFFAFAFA" BorderBrush="#FF2E7A7A" Foreground="#FF2E7A7A"/>
         </Grid>
     </Border>
 </basic:MyPage>

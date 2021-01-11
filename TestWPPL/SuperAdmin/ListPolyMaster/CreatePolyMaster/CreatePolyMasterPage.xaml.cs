@@ -81,5 +81,10 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
             });
 
         }
+
+        private void upload_btn(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
