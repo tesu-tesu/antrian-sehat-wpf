@@ -1,10 +1,11 @@
 ﻿<basic:MyPage  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
-               x:Class="TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster.CreatePolyMasterPage"
                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency"
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+               x:Class="TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster.CreatePolyMasterPage"
                mc:Ignorable="d"
                Title="CreatePolyMasterPage" Width="617.6" Height="403.2"
 >
@@ -12,9 +13,10 @@
         <Grid Background="Transparent" Margin="0,0,0,49.6" MinHeight="68" MinWidth="68">
 
             <TextBlock Margin="182.8,75.2,0,0" Text="Nama Poli : " TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="20" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontWeight="Bold" Grid.Row="1" FontSize="14"/>
-            <TextBox Height="30" Margin="263.35,65.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.4" Name="name_txt" HorizontalAlignment="Left" FontWeight="Bold" FontSize="18" UseLayoutRounding="False" Opacity="0.84"/>
+            <TextBox Height="30" Margin="263.35,65.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.4" x:Name="name_txt" HorizontalAlignment="Left" FontWeight="Bold" FontSize="18" UseLayoutRounding="False" Opacity="0.84"/>
 
-            <Button Name="addPolyMaster_btn" Content="Submit" Margin="269.55,185.143,0,0" VerticalAlignment="Top" Click="btAddPolyMaster" HorizontalAlignment="Left" Height="35" Width="106.147"/>
+            <Button x:Name="addPolyMaster_btn" Content="Submit" Margin="269.55,185.143,0,0" VerticalAlignment="Top" Click="btAddPolyMaster" HorizontalAlignment="Left" Height="35" Width="106.147"/>
+            <Button x:Name="uploadImage_btn" Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,116.1,0,0" VerticalAlignment="Top" Width="80.55" Background="#FFFAFAFA" BorderBrush="#FF78EEEE"/>
         </Grid>
     </Border>
 </basic:MyPage>
