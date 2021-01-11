@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using TestWPPL.Admin.CreatePolyclinicSchedule;
+using Velacro.LocalFile;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBox;
@@ -86,7 +87,8 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster
 
         private void upload_btn(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            OpenFile openFile = new OpenFile();
+            openFile.openImageFile(false);
         }
     }
 }
