@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Newtonsoft.Json.Linq;
 using TestWPPL.Admin.ListPolyclinic;
+using Velacro.LocalFile;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBox;
@@ -80,6 +81,13 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
                 );
             });
 
+        }
+
+        private void upload_btn(object sender, RoutedEventArgs e)
+        {
+            OpenFile openFile = new OpenFile();
+            openFile.openImageFile(false);
+            
         }
     }
 }
