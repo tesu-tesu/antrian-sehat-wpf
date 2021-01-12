@@ -6,14 +6,16 @@
       xmlns:local="clr-namespace:TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster"
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       mc:Ignorable="d"
-      Title="EditPolyMasterPage" Width="617.6" Height="471.6">
-    <Border x:Name="roundBorder" BorderThickness="0" CornerRadius="20" Background="#FFF5FAFD" Margin="0,0,0,48">
+      Title="EditPolyMasterPage" Width="432" Height="432">
+    <Border x:Name="roundBorder" BorderThickness="0" CornerRadius="20" Background="#FFF5FAFD" Margin="0,0,0,0">
         <Grid Background="Transparent" Margin="0,0,0,49.6" MinHeight="68" MinWidth="68">
-            <TextBlock Margin="182.8,75.2,0,0" Text="Nama Poli : " TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="20" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontWeight="Bold" Grid.Row="1" FontSize="14"/>
-            <TextBox Height="30" Margin="268.35,65.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168.4" Name="name_txt" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold" Opacity="0.8"/>
+            <TextBlock Margin="58.85,116,0,0" Text="Nama Poli  : " TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="29.026" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontSize="14"/>
+            <TextBox Height="30" Margin="182.8,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168.4" Name="name_txt" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold" Opacity="0.8" RenderTransformOrigin="0.475,1.283"/>
 
-            <Button Name="UpdatePolyMasterBtn" Content="Update" Margin="258.75,205,0,0" VerticalAlignment="Top" Click="btnUpdatePolyMaster" HorizontalAlignment="Left" Height="35" RenderTransformOrigin="-0.497,0.614" Width="126.437"/>
-            <Button x:Name="uploadImage_btn" Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,116.1,0,0" VerticalAlignment="Top" Width="80.55" Background="#FFFAFAFA" BorderBrush="#FF2E7A7A" Foreground="#FF2E7A7A"/>
+            <Button Name="UpdatePolyMasterBtn" Content="Update" Margin="156.4,297.8,0,49.6" VerticalAlignment="Center" Click="btnUpdatePolyMaster" HorizontalAlignment="Left" Height="35" RenderTransformOrigin="-0.497,0.614" Width="126.437"/>
+            <Button x:Name="uploadImage_btn" Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,167.3,0,0" VerticalAlignment="Top" Width="168.4" Background="#FFFAFAFA" Foreground="#FF626B6B" BorderBrush="#FF646B6B" FontWeight="Normal" FontFamily="Open Sans"/>
+            <TextBlock Margin="58.85,169.474,0,0" Text="Gambar&#x9;   :" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="29.026" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontSize="14"/>
+            <Label Content="Ubah Master Poli" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="109.6,35.3,104.4,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" Height="35.7" Width="214" Focusable="True" FontSize="20" FontWeight="Bold"/>
         </Grid>
     </Border>
 </basic:MyPage>

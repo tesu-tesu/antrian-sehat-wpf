@@ -6,8 +6,57 @@
                xmlns:local="clr-namespace:TestWPPL.About"
                xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
                mc:Ignorable="d"
-               Title="About" d:DesignHeight="550" d:DesignWidth="1000">
-    <Grid>
-        
-    </Grid>
+               Title="About" Height="550" Width="1000">
+    <Border x:Name="roundBorder" BorderThickness="0" CornerRadius="20" Background="#FFF5FAFD" Margin="0,0,0,0">
+        <Grid Background="Transparent"  MinHeight="68" MinWidth="68" RenderTransformOrigin="0.498,0.694" Margin="0,-10.8,0,10.8">
+            <Ellipse Margin="72,108.8,843.6,360.4" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/assets/images/team/3.png" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock HorizontalAlignment="Left" Height="38" Margin="72,33.2,0,0" TextWrapping="Wrap" Text="Team Developer" VerticalAlignment="Top" Width="387.2" FontFamily="Poppins" FontSize="28" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.4" Margin="161.4,131.6,0,0" TextWrapping="Wrap" Text="Refano Pradana" VerticalAlignment="Top" Width="177.6" FontFamily="Open Sans" FontSize="20"/>
+            <Ellipse Margin="349.2,108.8,566.4,360.4" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/assets/images/team/4.png" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock HorizontalAlignment="Left" Height="27.4" Margin="438.6,131.6,0,0" TextWrapping="Wrap" Text="Yanu Adi Nugraha" VerticalAlignment="Top" Width="177.6" FontFamily="Open Sans" FontSize="20"/>
+            <Ellipse Margin="667.2,108.8,248.4,360.4" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/assets/images/team/15.jpg" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock HorizontalAlignment="Left" Height="27.4" Margin="756.6,131.6,0,0" TextWrapping="Wrap" Text="Rochimatus Syadiah" VerticalAlignment="Top" Width="196.8" FontFamily="Open Sans" FontSize="20"/>
+            <Ellipse Margin="72,266,843.6,203.2" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/assets/images/team/21.png" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock HorizontalAlignment="Left" Height="27.4" Margin="161.4,288.8,0,0" TextWrapping="Wrap" Text="Sabillah Ferdiana" VerticalAlignment="Top" Width="177.6" FontFamily="Open Sans" FontSize="20"/>
+            <Ellipse Margin="349.2,272.023,566.4,197.177" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/assets/images/team/22.png" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock HorizontalAlignment="Left" Height="27.4" Margin="438.6,294.823,0,0" TextWrapping="Wrap" Text="M. Ghozzy Ghifari" VerticalAlignment="Top" Width="177.6" FontFamily="Open Sans" FontSize="20"/>
+            <Ellipse Margin="667.2,266,248.4,203.2" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/assets/images/team/27.png" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock HorizontalAlignment="Left" Height="27.4" Margin="756.6,288.8,0,0" TextWrapping="Wrap" Text="M. Satriyo Aji" VerticalAlignment="Top" Width="177.6" FontFamily="Open Sans" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" Height="38" Margin="72,375.2,0,0" TextWrapping="Wrap" Text="Sponsored By" VerticalAlignment="Top" Width="331.2" FontFamily="Poppins" FontSize="24"/>
+            <Image HorizontalAlignment="Left" Height="60.695" Source="pack://application:,,,/assets/images/sponsor/VirtualHive.png" Stretch="UniformToFill" Margin="72,418.2,0,0" VerticalAlignment="Top" Width="120.254"/>
+            <Image HorizontalAlignment="Left" Height="60.695" Source="pack://application:,,,/assets/images/Sponsor/RTech.png" Stretch="UniformToFill" Margin="244.346,418.2,0,0" VerticalAlignment="Top" Width="120.254"/>
+            <Image HorizontalAlignment="Left" Height="39.18" Source="pack://application:,,,/assets/images/Sponsor/PTI.png" Stretch="UniformToFill" Margin="90.012,485.85,0,0" VerticalAlignment="Top" Width="65.16"/>
+            <Image HorizontalAlignment="Left" Height="69.597" Source="pack://application:,,,/assets/images/Sponsor/Maulidan.png" Stretch="UniformToFill" Margin="191.724,459.606,0,0" VerticalAlignment="Top" Width="172.347" RenderTransformOrigin="0.273,1.095"/>
+            <TextBlock HorizontalAlignment="Left" Height="38" Margin="565.2,375.2,0,0" TextWrapping="Wrap" Text="Supported By" VerticalAlignment="Top" Width="331.2" FontFamily="Poppins" FontSize="24"/>
+            <Image HorizontalAlignment="Left" Height="44.695" Source="pack://application:,,,/assets/images/Sponsor/Sindika.png" Stretch="UniformToFill" Margin="549.946,418.2,0,0" VerticalAlignment="Top" Width="78.254"/>
+            <Image HorizontalAlignment="Left" Height="60.695" Source="pack://application:,,,/assets/images/Sponsor/RIns.png" Stretch="UniformToFill" Margin="645.946,413.2,0,0" VerticalAlignment="Top" Width="123.454"/>
+            <Image HorizontalAlignment="Left" Height="60.695" Source="pack://application:,,,/assets/images/Sponsor/trustmedis.png" Stretch="UniformToFill" Margin="565.2,467.895,0,0" VerticalAlignment="Top" Width="120.254"/>
+            <Image HorizontalAlignment="Left" Height="39.18" Source="pack://application:,,,/assets/images/Sponsor/Profilku.png" Stretch="UniformToFill" Margin="702.454,478.895,0,0" VerticalAlignment="Top" Width="108.254"/>
+            <Image HorizontalAlignment="Left" Height="46.135" Source="pack://application:,,,/assets/images/Sponsor/altera.png" Stretch="UniformToFill" Margin="815.708,471.94,0,0" VerticalAlignment="Top" Width="98.654"/>
+        </Grid>
+    </Border>
 </basic:MyPage>

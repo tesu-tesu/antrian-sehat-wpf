@@ -7,16 +7,16 @@
                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                x:Class="TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster.CreatePolyMasterPage"
                mc:Ignorable="d"
-               Title="CreatePolyMasterPage" Width="617.6" Height="403.2"
->
-    <Border x:Name="roundBorder" BorderThickness="0" CornerRadius="20" Background="#FFF5FAFD" Margin="0,0,0,10">
+               Title="CreatePolyMasterPage" Width="432" Height="432">
+    <Border x:Name="roundBorder" BorderThickness="0" CornerRadius="20" Background="#FFF5FAFD" Margin="0,0,0,0">
         <Grid Background="Transparent" Margin="0,0,0,49.6" MinHeight="68" MinWidth="68">
+            <TextBlock Margin="58.85,116,0,0" Text="Nama Poli  : " TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="29.026" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontSize="14"/>
+            <TextBox Height="30" Margin="182.8,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168.4" Name="name_txt" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold" Opacity="0.8" RenderTransformOrigin="0.475,1.283"/>
 
-            <TextBlock Margin="182.8,75.2,0,0" Text="Nama Poli : " TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="20" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontWeight="Bold" Grid.Row="1" FontSize="14"/>
-            <TextBox Height="30" Margin="263.35,65.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.4" x:Name="name_txt" HorizontalAlignment="Left" FontWeight="Bold" FontSize="18" UseLayoutRounding="False" Opacity="0.84"/>
-
-            <Button x:Name="addPolyMaster_btn" Content="Submit" Margin="269.55,185.143,0,0" VerticalAlignment="Top" Click="btAddPolyMaster" HorizontalAlignment="Left" Height="35" Width="106.147"/>
-            <Button x:Name="uploadImage_btn" Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,116.1,0,0" VerticalAlignment="Top" Width="80.55" Background="#FFFAFAFA" BorderBrush="#FF2E7A7A" Foreground="#FF2E7A7A"/>
+            <Button Name="addPolyMaster_btn" Content="Submit" Margin="156.4,297.8,0,49.6" VerticalAlignment="Center" Click="btAddPolyMaster" HorizontalAlignment="Left" Height="35" RenderTransformOrigin="-0.497,0.614" Width="126.437"/>
+            <TextBlock Margin="58.85,169.474,0,0" Text="Gambar&#x9;   :" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="29.026" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontSize="14"/>
+            <Label Content="Buat Master Poli" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="109.6,35.3,104.4,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" Height="35.7" Width="214" Focusable="True" FontSize="20" FontWeight="Bold"/>
+            <Button x:Name="uploadImage_btn" Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,167.3,0,0" VerticalAlignment="Top" Width="168.4" Background="#FFFAFAFA" Foreground="#FF626B6B" BorderBrush="#FF646B6B" FontWeight="Normal" FontFamily="Open Sans"/>
         </Grid>
     </Border>
 </basic:MyPage>
