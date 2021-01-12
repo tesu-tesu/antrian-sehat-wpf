@@ -27,12 +27,15 @@ namespace TestWPPL
     {
         private MyPage listPolyclinicPage;
         private MyPage createPolyclinicSchedulePage;
-
+        private MyPage aboutPage;
+        
         public AdminWindow()
         {
             InitializeComponent();
             listPolyclinicPage = new ListPolyclinicPage();
             createPolyclinicSchedulePage = new CreatePolyclinicSchedulePage();
+            aboutPage = new About.About();
+            mainFrame.Navigate(aboutPage);
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)

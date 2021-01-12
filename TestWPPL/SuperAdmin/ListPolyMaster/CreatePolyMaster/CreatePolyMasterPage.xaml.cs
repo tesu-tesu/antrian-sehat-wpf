@@ -16,7 +16,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
         private IMyButton addButton;
-        private IMyTextBox nameTxtBox, emailTxtBox, addressTxtBox, callCenterTxtBox;
+        private IMyTextBox nameTxtBox;
 
         public CreatePolyMasterPage()
         {

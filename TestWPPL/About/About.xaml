@@ -8,7 +8,8 @@
                mc:Ignorable="d"
                Title="About" Height="550" Width="1000">
     <Border x:Name="roundBorder" BorderThickness="0" CornerRadius="20" Background="#FFF5FAFD" Margin="0,0,0,0">
-        <Grid Background="Transparent"  MinHeight="68" MinWidth="68" RenderTransformOrigin="0.498,0.694" Margin="0,-10.8,0,10.8">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Background="Transparent"  MinHeight="68" MinWidth="68" RenderTransformOrigin="0.498,0.694" Height="550" Width="1000" Margin="0">
             <Ellipse Margin="72,108.8,843.6,360.4" >
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="pack://application:,,,/assets/images/team/3.png" Stretch="UniformToFill"/>
@@ -58,5 +59,6 @@
             <Image HorizontalAlignment="Left" Height="39.18" Source="pack://application:,,,/assets/images/Sponsor/Profilku.png" Stretch="UniformToFill" Margin="702.454,478.895,0,0" VerticalAlignment="Top" Width="108.254"/>
             <Image HorizontalAlignment="Left" Height="46.135" Source="pack://application:,,,/assets/images/Sponsor/altera.png" Stretch="UniformToFill" Margin="815.708,471.94,0,0" VerticalAlignment="Top" Width="98.654"/>
         </Grid>
+        </ScrollViewer>
     </Border>
 </basic:MyPage>

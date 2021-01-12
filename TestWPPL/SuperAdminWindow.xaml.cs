@@ -32,6 +32,7 @@ namespace TestWPPL
         private MyPage listUserPage;
         private MyPage listHealthAgencyPage;
         private MyPage listPolyMasterPage;
+        private MyPage aboutPage;
 
         public SuperAdminWindow()
         {
@@ -40,6 +41,8 @@ namespace TestWPPL
             listUserPage = new ListUserPage();
             listHealthAgencyPage = new ListHealthAgencyPage();
             listPolyMasterPage = new ListPolyMasterPage();
+            aboutPage = new About.About();
+            mainFrame.Navigate(aboutPage);
         }
 
         private void logoutBtnClick(object sender, RoutedEventArgs e)

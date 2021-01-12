@@ -19,7 +19,7 @@
         </DockPanel>
 
         <DockPanel HorizontalAlignment="Left" VerticalAlignment="Stretch" Grid.RowSpan="2" Background="White" LastChildFill="False">
-            <Canvas Height="51" VerticalAlignment="Center" DockPanel.Dock="Top" Margin="10,15,10,0">
+            <Canvas Height="51" VerticalAlignment="Center" DockPanel.Dock="Top" Margin="10,15,10,0" >
                 <Canvas.Background>
                     <ImageBrush ImageSource="ANTRIANsehat.png"/>
                 </Canvas.Background>

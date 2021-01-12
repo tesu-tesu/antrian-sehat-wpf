@@ -16,7 +16,7 @@
             <Button Name="addPolyMaster_btn" Content="Submit" Margin="156.4,297.8,0,49.6" VerticalAlignment="Center" Click="btAddPolyMaster" HorizontalAlignment="Left" Height="35" RenderTransformOrigin="-0.497,0.614" Width="126.437"/>
             <TextBlock Margin="58.85,169.474,0,0" Text="Gambar&#x9;   :" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.925" HorizontalAlignment="Left" Height="29.026" Width="80.55" RenderTransformOrigin="0.501,7.18" Foreground="Black" FontSize="14"/>
             <Label Content="Buat Master Poli" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="109.6,35.3,104.4,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" Height="35.7" Width="214" Focusable="True" FontSize="20" FontWeight="Bold"/>
-            <Button x:Name="uploadImage_btn" click="upload_btn"  Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,167.3,0,0" VerticalAlignment="Top" Width="168.4" Background="#FFFAFAFA" Foreground="#FF626B6B" BorderBrush="#FF646B6B" FontWeight="Normal" FontFamily="Open Sans"/>
+            <Button x:Name="uploadImage_btn" Click="upload_btn"  Content="Upload Image" HorizontalAlignment="Left" Height="31.2" Margin="182.8,167.3,0,0" VerticalAlignment="Top" Width="168.4" Background="#FFFAFAFA" Foreground="#FF626B6B" BorderBrush="#FF646B6B" FontWeight="Normal" FontFamily="Open Sans"/>
         </Grid>
     </Border>
 </basic:MyPage>
