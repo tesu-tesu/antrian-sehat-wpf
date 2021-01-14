@@ -20,10 +20,10 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         private BuilderTextBox txtBoxBuilder;
         private IMyButton addButton;
         private IMyTextBox nameTxtBox;
-        private String imageText=""; 
         MyFile polyMasterImage;
-        private MyFile myFile;
-        
+        private Label imageInfoLabel;
+
+
         public CreatePolyMasterPage()
         {
             InitializeComponent();
@@ -93,21 +93,21 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         {
             
             OpenFile openFile = new OpenFile();
-            myFile = openFile.openFile(false)[0];            
+            polyMasterImage = openFile.openFile(false)[0];            
 
-            if (myFile != null)
+            if (polyMasterImage != null)
             {
-                if (myFile.extension.Equals(".png", StringComparison.InvariantCultureIgnoreCase) ||
-                    myFile.extension.Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) ||
-                    myFile.extension.Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase) ||
-                    myFile.extension.Equals(".bmp", StringComparison.InvariantCultureIgnoreCase))
+                if (polyMasterImage.extension.Equals(".png", StringComparison.InvariantCultureIgnoreCase) ||
+                    polyMasterImage.extension.Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) ||
+                    polyMasterImage.extension.Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase) ||
+                    polyMasterImage.extension.Equals(".bmp", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    imageText = myFile.getFileName();
+                    //label_image_info = polyMasterImage.fullFileName;
                 }
                 else
                 {
                     MessageBox.Show("File format not supported !", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                    myFile = null;
+                    polyMasterImage = null;
                 }
             }
             

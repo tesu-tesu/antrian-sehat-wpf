@@ -12,7 +12,7 @@
     <Grid Margin="4">
         <DataGrid Margin="0,50,0,0" IsReadOnly="true" HorizontalContentAlignment="Center" Name="DgPolyMasters" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nama Master Poli" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Nama Master Poli" Binding="{Binding name}" Width="400" />
                 <DataGridTextColumn Header="Picture" Binding="{Binding image}" />
 
                 <DataGridTemplateColumn Header="Action">
