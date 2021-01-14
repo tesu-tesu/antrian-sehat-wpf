@@ -38,10 +38,10 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
                 .setRequestMethod(HttpMethod.Post);
             client.setOnSuccessRequest(setSuccessStorePolyMaster);
             client.setOnFailedRequest(setErrorStorePolyMaster);
-            var response = await client.sendRequest(requestBuilder.getApiRequestBundle());
+            var response = await client.sendRequest(request.getApiRequestBundle());
         }
 
-        public async void storePolyMasterData(String name)
+        /*public async void storePolyMasterData(String name)
         {
             ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
             var request = new ApiRequestBuilder();
@@ -54,7 +54,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
             client.setOnSuccessRequest(setSuccessStorePolyMaster);
             client.setOnFailedRequest(setErrorStorePolyMaster);
             var response = await client.sendRequest(request.getApiRequestBundle());
-        }
+        }*/
         
         private void setSuccessStorePolyMaster(HttpResponseBundle _response)
         {
