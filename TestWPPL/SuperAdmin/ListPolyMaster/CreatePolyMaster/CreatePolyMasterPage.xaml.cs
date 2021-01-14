@@ -5,6 +5,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using TestWPPL.Admin.ListPolyclinic;
+using Velacro.Basic;
 using Velacro.LocalFile;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
@@ -19,8 +20,10 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         private BuilderTextBox txtBoxBuilder;
         private IMyButton addButton;
         private IMyTextBox nameTxtBox;
-        private String imageText="";
-
+        private String imageText=""; 
+        MyFile polyMasterImage;
+        private MyFile myFile;
+        
         public CreatePolyMasterPage()
         {
             InitializeComponent();
@@ -40,11 +43,12 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         {
             addButton = buttonBuilder.activate(this, "addHA_btn");
             nameTxtBox = txtBoxBuilder.activate(this, "name_txt");
+            polyMasterImage = new MyFile();
         }
 
         private void btAddPolyMaster(object sender, RoutedEventArgs e)
         {
-            getController().callMethod("storePolyMasterData", name_txt.Text, imageText);
+            getController().callMethod("storePolyMasterData", name_txt.Text, polyMasterImage);
         }
         
         public void successStore(PolyMaster polyMaster)
@@ -87,10 +91,38 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
 
         private void upload_btn(object sender, RoutedEventArgs e)
         {
-            //OpenFile op = new OpenFile();
-            //op.openImageFile(false);
-          
-            OpenFileDialog op = new OpenFileDialog();
+            
+            OpenFile openFile = new OpenFile();
+            myFile = openFile.openFile(false)[0];            
+
+            if (myFile != null)
+            {
+                if (myFile.extension.Equals(".png", StringComparison.InvariantCultureIgnoreCase) ||
+                    myFile.extension.Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) ||
+                    myFile.extension.Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase) ||
+                    myFile.extension.Equals(".bmp", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    imageText = myFile.getFileName();
+                }
+                else
+                {
+                    MessageBox.Show("File format not supported !", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                    myFile = null;
+                }
+            }
+            
+            
+            /*if (op != null)
+            {
+                polyMasterImage.Source = op.openImageFile(false)[0];
+            }
+            else
+            {
+                MessageBox.Show("Format file haruslah gambar!", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                op = null;
+            }*/
+            
+            /*OpenFileDialog op = new OpenFileDialog();
             op.Title = "Select a picture";  
             op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +  
                         "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +  
@@ -99,8 +131,8 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
             {
                 Image imgPhoto = new Image();
                 imgPhoto.Source = new BitmapImage(new Uri(op.FileName));
-            }  
-            
+                imageText = op.SafeFileName;
+            }  */
         }
     }
 }
