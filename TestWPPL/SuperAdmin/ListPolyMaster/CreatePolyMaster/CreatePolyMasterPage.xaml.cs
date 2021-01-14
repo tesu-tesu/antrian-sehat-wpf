@@ -21,8 +21,6 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         private IMyButton addButton;
         private IMyTextBox nameTxtBox;
         MyFile polyMasterImage;
-        private Label imageInfoLabel;
-
 
         public CreatePolyMasterPage()
         {
@@ -102,11 +100,11 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
                     polyMasterImage.extension.Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase) ||
                     polyMasterImage.extension.Equals(".bmp", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    //label_image_info = polyMasterImage.fullFileName;
+                    label_image_info.Text = polyMasterImage.fullFileName;
                 }
                 else
                 {
-                    MessageBox.Show("File format not supported !", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("File tidak Support, pastikan berformat gambar", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                     polyMasterImage = null;
                 }
             }
