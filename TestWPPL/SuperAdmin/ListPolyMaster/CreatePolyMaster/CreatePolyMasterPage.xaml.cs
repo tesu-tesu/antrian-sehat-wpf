@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using TestWPPL.Admin.ListPolyclinic;
 using Velacro.LocalFile;
@@ -17,6 +19,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
         private BuilderTextBox txtBoxBuilder;
         private IMyButton addButton;
         private IMyTextBox nameTxtBox;
+        private String imageText="";
 
         public CreatePolyMasterPage()
         {
@@ -41,8 +44,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
 
         private void btAddPolyMaster(object sender, RoutedEventArgs e)
         {
-            getController().callMethod("storePolyMasterData",
-                name_txt.Text);
+            getController().callMethod("storePolyMasterData", name_txt.Text, imageText);
         }
         
         public void successStore(PolyMaster polyMaster)
@@ -85,8 +87,19 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
 
         private void upload_btn(object sender, RoutedEventArgs e)
         {
-            OpenFile openFile = new OpenFile();
-            openFile.openImageFile(false);
+            //OpenFile op = new OpenFile();
+            //op.openImageFile(false);
+          
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Select a picture";  
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +  
+                        "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +  
+                        "Portable Network Graphic (*.png)|*.png";  
+            if (op.ShowDialog() == true)
+            {
+                Image imgPhoto = new Image();
+                imgPhoto.Source = new BitmapImage(new Uri(op.FileName));
+            }  
             
         }
     }

@@ -18,9 +18,24 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
             return new CreatePolyMasterController(_myView);
         }
         
+        public async void storePolyMasterData(String name, String image)
+        {
+            ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
+            var request = new ApiRequestBuilder();
+
+            var req = request
+                .buildHttpRequest()
+                .addParameters("name", name)
+                .addParameters("image", image)
+                .setEndpoint("admin/poly-master")
+                .setRequestMethod(HttpMethod.Post);
+            client.setOnSuccessRequest(setSuccessStorePolyMaster);
+            client.setOnFailedRequest(setErrorStorePolyMaster);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
         public async void storePolyMasterData(String name)
         {
-
             ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
             var request = new ApiRequestBuilder();
 
@@ -33,7 +48,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
             client.setOnFailedRequest(setErrorStorePolyMaster);
             var response = await client.sendRequest(request.getApiRequestBundle());
         }
-
+        
         private void setSuccessStorePolyMaster(HttpResponseBundle _response)
         {
             string message = _response.getHttpResponseMessage().Content.ReadAsStringAsync().Result;
