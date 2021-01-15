@@ -14,7 +14,7 @@ namespace TestWPPL
 
         private ApiAntrianSehat()
         {
-            apiClient = new ApiClient("http://127.0.0.1:8000/api/");
+            apiClient = new ApiClient("https://api.antrian-sehat.me/api");
         }
 
 
