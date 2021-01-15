@@ -24,7 +24,7 @@ namespace TestWPPL.Admin.ListPolyclinic
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/health-agency/"+ Application.Current.Resources["ha_id"] + "/polyclinic")
+                .setEndpoint("schedule/of-ha/"+ Application.Current.Resources["ha_id"])
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetch);
             client.setOnFailedRequest(setViewErrorFetch);

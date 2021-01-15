@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWPPL", "TestWPPL\TestWPPL.csproj", "{449F8A72-F7D8-4AEF-B2A3-D3D5B37FFED8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntrianSehat", "TestWPPL\AntrianSehat.csproj", "{449F8A72-F7D8-4AEF-B2A3-D3D5B37FFED8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

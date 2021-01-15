@@ -34,7 +34,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.CreatePolyMaster
             var request = requestBuilder
                 .buildHttpRequest()
                 .buildMultipartRequest(new MultiPartContent(formContent))
-                .setEndpoint("admin/poly-master")
+                .setEndpoint("poly-master")
                 .setRequestMethod(HttpMethod.Post);
             client.setOnSuccessRequest(setSuccessStorePolyMaster);
             client.setOnFailedRequest(setErrorStorePolyMaster);

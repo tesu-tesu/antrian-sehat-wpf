@@ -24,7 +24,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/health-agency/" + idHA.ToString())
+                .setEndpoint("health-agency/" + idHA.ToString())
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetchHA);
             client.setOnFailedRequest(setViewErrorFetchHA);
@@ -54,7 +54,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.EditHealthAgency
                 .addParameters("address", address)
                 .addParameters("call_center", call_center)
                 .addParameters("role", "Admin")
-                .setEndpoint("admin/health-agency/" + id.ToString())
+                .setEndpoint("health-agency/" + id.ToString())
                 .setRequestMethod(HttpMethod.Post);
             
             client.setOnSuccessRequest(setSuccessStoreHealthAgency);

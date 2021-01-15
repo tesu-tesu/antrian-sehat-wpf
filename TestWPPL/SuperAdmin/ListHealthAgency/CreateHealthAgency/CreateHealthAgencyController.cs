@@ -32,7 +32,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency.CreateHealthAgency
                 .addParameters("email", email)
                 .addParameters("address", address)
                 .addParameters("call_center", callCenter)
-                .setEndpoint("admin/health-agency")
+                .setEndpoint("health-agency")
                 .setRequestMethod(HttpMethod.Post);
             client.setOnSuccessRequest(setSuccessStoreHealthAgency);
             client.setOnFailedRequest(setErrorStoreHealthAgency);

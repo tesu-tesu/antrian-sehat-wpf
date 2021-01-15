@@ -32,7 +32,6 @@ namespace TestWPPL.Login {
             client.setOnFailedRequest(setViewErrorLogin);
             var response = await client.sendRequest(request.getApiRequestBundle());
             //string content = await response.getHttpResponseMessage().Content.ReadAsStringAsync();
-
         }
 
         private void setViewErrorLogin(HttpResponseBundle _response)

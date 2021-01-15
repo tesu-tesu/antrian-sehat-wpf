@@ -26,7 +26,7 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/health-agency")
+                .setEndpoint("health-agency")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetch);
             client.setOnFailedRequest(setViewErrorFetch);
@@ -49,12 +49,11 @@ namespace TestWPPL.SuperAdmin.ListHealthAgency
 
         public async void deleteProcess(HealthAgency healthAgency)
         {
-            
             ApiClient client = ApiAntrianSehat.getInstance().GetApiClient();
             var request = new ApiRequestBuilder();
 
             var req = request.buildHttpRequest()
-                .setEndpoint("admin/health-agency/" + healthAgency.id)
+                .setEndpoint("health-agency/" + healthAgency.id)
                 .setRequestMethod(HttpMethod.Delete);
             client.setOnSuccessRequest(setViewSuccessDelete);
             client.setOnFailedRequest(setViewErrorDelete);

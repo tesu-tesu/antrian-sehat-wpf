@@ -52,7 +52,7 @@ namespace TestWPPL.SuperAdmin.ListUserModul.EditUser
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/health-agency/all")
+                .setEndpoint("health-agency/all")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetchHealthAgency);
             client.setOnFailedRequest(setViewErrorFetchHealthAgency);

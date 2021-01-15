@@ -25,7 +25,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
             var request = new ApiRequestBuilder();
 
             var req = request.buildHttpRequest()
-                .setEndpoint("admin/poly-master/")
+                .setEndpoint("poly-master/")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetch);
             client.setOnFailedRequest(setViewFailedFetch);
@@ -50,7 +50,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster
             var request = new ApiRequestBuilder();
 
             var req = request.buildHttpRequest()
-                .setEndpoint("admin/poly-master/" + polyMaster.id)
+                .setEndpoint("poly-master/" + polyMaster.id)
                 .setRequestMethod(HttpMethod.Delete);
             client.setOnSuccessRequest(setViewSuccessDelete);
             client.setOnFailedRequest(setViewErrorDelete);

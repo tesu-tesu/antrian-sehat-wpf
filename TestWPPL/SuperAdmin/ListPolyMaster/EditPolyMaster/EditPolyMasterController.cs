@@ -28,7 +28,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/poly-master/" + idPolyMaster.ToString())
+                .setEndpoint("poly-master/" + idPolyMaster.ToString())
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetchPolyMaster);
             client.setOnFailedRequest(setViewErrorFetchPolyMaster);
@@ -55,7 +55,7 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster
             var req = request.buildHttpRequest()
                 .addParameters("_method", "PUT")
                 .addParameters("name", name)
-                .setEndpoint("admin/poly-master/" + id.ToString())
+                .setEndpoint("poly-master/" + id.ToString())
                 .setRequestMethod(HttpMethod.Post);
             client.setOnSuccessRequest(setSuccessStorePolyMaster);
             client.setOnFailedRequest(setErrorStorePolyMaster);

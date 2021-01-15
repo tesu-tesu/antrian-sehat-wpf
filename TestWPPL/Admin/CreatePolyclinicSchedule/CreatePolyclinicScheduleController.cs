@@ -26,7 +26,7 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/poly-master/all")
+                .setEndpoint("poly-master/all")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetch);
             client.setOnFailedRequest(setViewErrorFetch);
@@ -56,7 +56,7 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
                 .buildHttpRequest()
                 .addParameters("poly_master_id", _polyMasterId.ToString())
                 .addParameters("health_agency_id", (string)Application.Current.Resources["ha_id"])
-                .setEndpoint("admin/polyclinic/")
+                .setEndpoint("polyclinic/")
                 .setRequestMethod(HttpMethod.Post);
             client.setOnSuccessRequest(setSuccessCreatePolyclinic);
             client.setOnFailedRequest(setErrorCreatePolyclinic);
@@ -81,7 +81,7 @@ namespace TestWPPL.Admin.CreatePolyclinicSchedule
                 .addParameters("time_open", _schedules.getTimeOpen())
                 .addParameters("time_close", _schedules.getTimeClose())
                 .addParameters("polyclinic", _polyclinicId.ToString())
-                .setEndpoint("admin/schedule/")
+                .setEndpoint("schedule/")
                 .setRequestMethod(HttpMethod.Post);
             client.setOnSuccessRequest(setSuccessCreateSchedule);
             client.setOnFailedRequest(setErrorCreateSchedule);

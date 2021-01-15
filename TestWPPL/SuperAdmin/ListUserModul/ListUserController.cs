@@ -26,7 +26,7 @@ namespace TestWPPL.SuperAdmin
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("admin/get-admin-user")
+                .setEndpoint("api/user/role-admin")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetch);
             client.setOnFailedRequest(setViewErrorFetch);
