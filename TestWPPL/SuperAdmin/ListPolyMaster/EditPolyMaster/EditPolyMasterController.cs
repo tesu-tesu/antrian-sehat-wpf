@@ -43,10 +43,10 @@ namespace TestWPPL.SuperAdmin.ListPolyMaster.EditPolyMaster
 
         private void setViewSuccessFetchPolyMaster(HttpResponseBundle _response)
         {
-            //PolyMaster polyMaster = _response.getParsedObject<RootSinglePolyMaster>().data;
-            //getView().callMethod("setPolyMasterData", polyMaster);
             Console.WriteLine("success: " + _response.getHttpResponseMessage()
                 .Content.ReadAsStringAsync().Result);
+            //PolyMaster polyMaster = _response.getParsedObject<RootSinglePolyMaster>().data;
+            //getView().callMethod("setPolyMasterData", polyMaster);
         }
 
         public async void updatePolyMaster(int id, String name)

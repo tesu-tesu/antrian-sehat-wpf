@@ -61,7 +61,7 @@ namespace TestWPPL.SuperAdmin.ListUserModul
         {
             this.Dispatcher.Invoke(() =>
             {
-                //Console.WriteLine("length: " + users.LongCount());
+                Console.WriteLine("length: " + users.LongCount());
                 dgUsers.ItemsSource = users;
                 //dataGridUser.setItemsSource<User>((Velacro.Basic.MyList<User>)users);
             });

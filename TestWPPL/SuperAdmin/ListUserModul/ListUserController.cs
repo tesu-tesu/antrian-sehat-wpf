@@ -26,7 +26,7 @@ namespace TestWPPL.SuperAdmin
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("api/user/role-admin")
+                .setEndpoint("user/role-admin")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewSuccessFetch);
             client.setOnFailedRequest(setViewErrorFetch);
@@ -37,7 +37,7 @@ namespace TestWPPL.SuperAdmin
         {
             Console.WriteLine("sukses: " + _response.getJObject());
             List<User> users = _response.getParsedObject<RootUser>().data;
-
+            
             getView().callMethod("setListView", users);
         }
 

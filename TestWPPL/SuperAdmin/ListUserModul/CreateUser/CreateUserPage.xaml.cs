@@ -66,7 +66,7 @@ namespace TestWPPL.SuperAdmin.ListUserModul.CreateUser
                     "Email : " + user.email + Environment.NewLine +
                     "Phone : " + user.phone + Environment.NewLine +
                     "No. KTP : " + user.residence_number + Environment.NewLine +
-                    "Puskesmas : " + user.health_agency.name + Environment.NewLine +
+                    /*"Puskesmas : " + user.health_agency.name + Environment.NewLine +*/
                     "Password : " + password, "Success");
             });
         }

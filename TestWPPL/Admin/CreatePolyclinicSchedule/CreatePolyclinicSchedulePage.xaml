@@ -32,14 +32,14 @@
         <TextBlock Text="Jam Tutup" HorizontalAlignment="Left" Margin="320,138,0,0" VerticalAlignment="Top" Width="165" FontSize="14"/>
         <materialDesign:TimePicker Is24Hours="true" Name="TimeClose_Tp" HorizontalAlignment="Left" Margin="320,170,0,0" VerticalAlignment="Top" Width="168"/>
 
-        <Grid Margin="16,225,612,217" Name="Day_Cb">
+        <Grid Margin="16,225,600,217" Name="Day_Cb">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <WrapPanel Orientation="Vertical" Grid.ColumnSpan="2">
-                <Label Content="Hari Buka" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14"/>
-                <WrapPanel Orientation="Horizontal" Width="360">
+            <WrapPanel Orientation="Vertical" Grid.ColumnSpan="2" Margin="0,0,20,0">
+                <Label Content="Hari Buka" FontSize="14"/>
+                <WrapPanel Orientation="Vertical">
                     <WrapPanel Orientation="Vertical">
                         <TextBlock Text="Senin" Padding="8"/>
                         <CheckBox HorizontalAlignment="Center" Name="Senin_Cb" Checked="Checked_Handler" Unchecked="Unchecked_Handler"/>
